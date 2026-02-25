@@ -1,0 +1,8 @@
+Flask==2.2.5
+Flask-SQLAlchemy==2.5.1
+Flask-JWT-Extended==4.4.4
+Flask-CORS==4.0.0
+python-dotenv==1.0.0
+SQLAlchemy==1.4.52
+Werkzeug==2.2.3
+reportlab==4.0.7

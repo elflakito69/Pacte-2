@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>SEMERTAZ – Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/frontend/dashboard/styles.css" />
+</head>
+
+<body class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-circle">S</div>
+      <span class="brand-name">SEMERTAZ</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-section="dashboard">
+        <span class="nav-icon">🏠</span>
+        <span>Dashboard</span>
+      </button>
+      <button class="nav-item" data-section="monitor">
+        <span class="nav-icon">📍</span>
+        <span>Monitoreo</span>
+      </button>
+      <button class="nav-item" data-section="routes">
+        <span class="nav-icon">🛣️</span>
+        <span>Rutas</span>
+      </button>
+      <button class="nav-item" data-section="tickets">
+        <span class="nav-icon">📄</span>
+        <span>Multas</span>
+      </button>
+      <button class="nav-item" data-section="users">
+        <span class="nav-icon">👥</span>
+        <span>Usuarios</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button class="logout-btn">Cerrar Sesión</button>
+    </div>
+  </aside>
+
+  <!-- MAIN AREA -->
+  <div class="main">
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" aria-label="Abrir menú">
+          ☰
+        </button>
+        <h1 id="topbar-title">Dashboard</h1>
+      </div>
+      <div class="topbar-right">
+        <div class="search-wrapper">
+          <input type="search" id="global-search" placeholder="Buscar..." />
+        </div>
+        <div class="avatar">
+          <span>AD</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="view active">
+        <div class="grid-4">
+          <div class="card summary-card">
+            <div class="card-header">
+              <span>Controladores Activos</span>
+              <span class="icon-circle">👥</span>
+            </div>
+            <div class="summary-number">24</div>
+            <div class="summary-sub">+2 desde hoy</div>
+          </div>
+
+          <div class="card summary-card">
+            <div class="card-header">
+              <span>Fuera de Zona</span>
+              <span class="icon-circle danger">!</span>
+            </div>
+            <div class="summary-number">3</div>
+            <div class="summary-sub warning-text">Requiere atención</div>
+          </div>
+
+          <div class="card summary-card">
+            <div class="card-header">
+              <span>Multas Registradas</span>
+              <span class="icon-circle">🧾</span>
+            </div>
+            <div class="summary-number">156</div>
+            <div class="summary-sub">Hoy</div>
+          </div>
+
+          <div class="card summary-card">
+            <div class="card-header">
+              <span>Pausas Activas</span>
+              <span class="icon-circle">⏱</span>
+            </div>
+            <div class="summary-number">8</div>
+            <div class="summary-sub">Pendiente de autorización</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <!-- Multas por zona -->
+          <div class="card">
+            <div class="card-title">Multas por Zona</div>
+            <div class="bar-row">
+              <span>Centro Sur</span>
+              <div class="bar">
+                <div class="bar-fill" style="width: 75%"></div>
+              </div>
+              <span class="bar-value">45</span>
+            </div>
+            <div class="bar-row">
+              <span>Zona Este</span>
+              <div class="bar">
+                <div class="bar-fill" style="width: 60%"></div>
+              </div>
+              <span class="bar-value">38</span>
+            </div>
+            <div class="bar-row">
+              <span>Zona Oeste</span>
+              <div class="bar">
+                <div class="bar-fill" style="width: 45%"></div>
+              </div>
+              <span class="bar-value">28</span>
+            </div>
+            <div class="bar-row">
+              <span>Periférica</span>
+              <div class="bar">
+                <div class="bar-fill" style="width: 25%"></div>
+              </div>
+              <span class="bar-value">12</span>
+            </div>
+          </div>
+
+          <!-- Actividad reciente -->
+          <div class="card">
+            <div class="card-title">Actividad Reciente</div>
+            <ul class="activity-list">
+              <li>
+                <span class="bullet"></span>
+                <div>
+                  <div class="activity-title">Multa registrada</div>
+                  <div class="activity-sub">Carlos M. · hace 2 min</div>
+                </div>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <div>
+                  <div class="activity-title">Pausa autorizada</div>
+                  <div class="activity-sub">Admin · hace 5 min</div>
+                </div>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <div>
+                  <div class="activity-title">Alerta: Fuera de zona</div>
+                  <div class="activity-sub">Sistema · hace 12 min</div>
+                </div>
+              </li>
+              <li>
+                <span class="bullet"></span>
+                <div>
+                  <div class="activity-title">Ruta completada</div>
+                  <div class="activity-sub">Juan R. · hace 18 min</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MONITOREO -->
+      <section id="monitor" class="view">
+        <div class="grid-monitor">
+          <div class="card map-card">
+            <div class="card-title">Mapa en Tiempo Real</div>
+            <div class="map-placeholder">
+              <div class="map-pin">📍</div>
+              <p>Ubicación de controladores</p>
+              <span class="muted">24 controladores activos</span>
+            </div>
+          </div>
+
+          <div class="monitor-side">
+            <div class="card">
+              <div class="card-title">Controladores</div>
+              <ul class="controller-list">
+                <li>
+                  <div>
+                    <div class="controller-name">Carlos M.</div>
+                    <div class="controller-zone">Centro Sur</div>
+                  </div>
+                  <span class="badge badge-success">En Ruta</span>
+                </li>
+                <li>
+                  <div>
+                    <div class="controller-name">Juan R.</div>
+                    <div class="controller-zone">Zona Este</div>
+                  </div>
+                  <span class="badge badge-warning">Pausa</span>
+                </li>
+                <li>
+                  <div>
+                    <div class="controller-name">María L.</div>
+                    <div class="controller-zone">Zona Oeste</div>
+                  </div>
+                  <span class="badge badge-success">En Ruta</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Filtros</div>
+              <label class="field-label" for="filter-zone">Zona</label>
+              <select id="filter-zone">
+                <option>Todas las zonas</option>
+                <option>Centro Sur</option>
+                <option>Zona Este</option>
+                <option>Zona Oeste</option>
+              </select>
+
+              <label class="field-label" for="filter-state">Estado</label>
+              <select id="filter-state">
+                <option>Todos los estados</option>
+                <option>En Ruta</option>
+                <option>Pausa</option>
+                <option>Fuera de Zona</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RUTAS -->
+      <section id="routes" class="view">
+        <div class="card">
+          <div class="card-header-between">
+            <div class="card-title">Gestión de Rutas</div>
+            <button class="btn-primary" onclick="showNewRouteModal()">+ Nueva Ruta</button>
+          </div>
+
+          <h3 class="table-subtitle">Rutas Disponibles</h3>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Trayecto</th>
+                  <th>Distancia</th>
+                  <th>Estado</th>
+                  <th>Tiempo Estimado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Datos cargados dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- MULTAS -->
+      <section id="tickets" class="view">
+        <div class="card">
+          <div class="card-header-between">
+            <div class="card-title">Gestión de Multas</div>
+            <div class="button-group">
+              <button class="btn-outline">Filtrar</button>
+              <button class="btn-primary" onclick="downloadTicketsPDF()">⬇ Descargar</button>
+            </div>
+          </div>
+
+          <h3 class="table-subtitle">Registro de Multas</h3>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Multa</th>
+                  <th>Controlador</th>
+                  <th>Placa</th>
+                  <th>Infracción</th>
+                  <th>Fecha/Hora</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Datos cargados dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- USUARIOS -->
+      <section id="users" class="view">
+        <div class="card">
+          <div class="card-header-between">
+            <div class="card-title">Gestión de Usuarios</div>
+            <button class="btn-primary" onclick="showNewUserModal()">+ Nuevo Usuario</button>
+          </div>
+
+          <h3 class="table-subtitle">Usuarios del Sistema</h3>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Email</th>
+                  <th>Rol</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Datos cargados dinámicamente -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL FILTRO MULTAS -->
+  <div id="filter-tickets-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Filtrar Multas</h2>
+        <button class="modal-close" onclick="closeFilterModal()">&times;</button>
+      </div>
+      <form id="filter-tickets-form" class="modal-form">
+        <div class="form-group">
+          <label for="filter-date-from">Fecha Desde</label>
+          <input type="date" id="filter-date-from" name="date_from">
+        </div>
+        <div class="form-group">
+          <label for="filter-date-to">Fecha Hasta</label>
+          <input type="date" id="filter-date-to" name="date_to">
+        </div>
+        <div class="form-group">
+          <label for="filter-controller">Controlador</label>
+          <input type="text" id="filter-controller" name="controller" placeholder="Nombre del controlador">
+        </div>
+        <div class="form-group">
+          <label for="filter-zone">Zona</label>
+          <select id="filter-zone" name="zone">
+            <option value="">Todas las zonas</option>
+            <option value="Centro Sur">Centro Sur</option>
+            <option value="Zona Este">Zona Este</option>
+            <option value="Zona Oeste">Zona Oeste</option>
+            <option value="Periférica">Periférica</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="filter-status">Estado</label>
+          <select id="filter-status" name="status">
+            <option value="">Todos los estados</option>
+            <option value="Registrada">Registrada</option>
+            <option value="Pendiente">Pendiente</option>
+            <option value="Pagada">Pagada</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="clearFilters()">Limpiar</button>
+          <button type="submit" class="btn-primary">Aplicar Filtros</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL NUEVO USUARIO -->
+  <div id="new-user-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Agregar Nuevo Usuario</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="new-user-form" class="modal-form">
+        <div class="form-group">
+          <label for="user-username">Nombre de Usuario</label>
+          <input type="text" id="user-username" name="username" required placeholder="Ej: juanperez">
+        </div>
+        <div class="form-group">
+          <label for="user-email">Correo Electrónico</label>
+          <input type="email" id="user-email" name="email" required placeholder="juan@example.com">
+        </div>
+        <div class="form-group">
+          <label for="user-fullname">Nombre Completo</label>
+          <input type="text" id="user-fullname" name="full_name" required placeholder="Juan Pérez">
+        </div>
+        <div class="form-group">
+          <label for="user-role">Rol</label>
+          <select id="user-role" name="role" required>
+            <option value="user">Controlador</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="user-password">Contraseña</label>
+          <input type="password" id="user-password" name="password" required placeholder="Mínimo 6 caracteres">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="closeUserModal()">Cancelar</button>
+          <button type="submit" class="btn-primary">Crear Usuario</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL NUEVA RUTA -->
+  <div id="new-route-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Agregar Nueva Ruta</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="new-route-form" class="modal-form">
+        <div class="form-group">
+          <label for="route-name">Nombre de la Ruta</label>
+          <input type="text" id="route-name" name="route-name" required placeholder="Ej: Ruta Centro">
+        </div>
+        <div class="form-group">
+          <label for="route-description">Descripción</label>
+          <textarea id="route-description" name="route-description" placeholder="Descripción de la ruta"></textarea>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="start-point">Punto de Inicio</label>
+            <input type="text" id="start-point" name="start-point" required placeholder="Ej: Plaza Mayor">
+          </div>
+          <div class="form-group">
+            <label for="end-point">Punto Final</label>
+            <input type="text" id="end-point" name="end-point" required placeholder="Ej: Estación Central">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="distance-km">Distancia (km)</label>
+            <input type="number" id="distance-km" name="distance-km" step="0.1" required placeholder="15.5">
+          </div>
+          <div class="form-group">
+            <label for="estimated-time">Tiempo Estimado (min)</label>
+            <input type="number" id="estimated-time" name="estimated-time" required placeholder="45">
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" onclick="closeModal()">Cancelar</button>
+          <button type="submit" class="btn-primary">Crear Ruta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/frontend/dashboard/app.js"></script>
+</body>
+
+</html>
