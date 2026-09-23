@@ -728,12 +728,19 @@ function renderRecentActivity(items) {
       iconHtml = '<span class="bullet" style="background:#e74c3c;"></span>';
     }
 
+    let clickAction = '';
+    if (item.has_coords && item.latitude && item.longitude) {
+      clickAction = `onclick="window.centerMapOn(${item.latitude}, ${item.longitude})" style="cursor:pointer;" title="Ver en mapa"`;
+    }
+
+    let timeText = item.time_ago || 'hace un momento';
+
     return `
       <li ${clickAction}>
         ${iconHtml}
         <div>
           <div class="activity-title">${item.description || 'Evento del sistema'}${gpsBadge}</div>
-          <div class="activity-sub">${item.user_name || 'Sistema'} · ${(() => { if (!item.timestamp) return 'hace un momento'; const diff = Math.floor((new Date() - new Date(item.timestamp.replace('Z','')+ 'Z')) / 1000); if (diff < 60) return diff + ' seg'; if (diff < 3600) return Math.floor(diff/60) + ' min'; if (diff < 86400) return Math.floor(diff/3600) + ' hrs'; return Math.floor(diff/86400) + ' das'; })()}</div>
+          <div class="activity-sub">${item.user_name || 'Sistema'} · ${timeText}</div>
         </div>
       </li>
     `;
