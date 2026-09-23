@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: semertaz_app
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://semertaz_user:semertaz_pass@db:5432/semertaz_db
+      - JWT_SECRET_KEY=super-secret-jwt-key
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:15-alpine
+    container_name: semertaz_db
+    environment:
+      - POSTGRES_USER=semertaz_user
+      - POSTGRES_PASSWORD=semertaz_pass
+      - POSTGRES_DB=semertaz_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:

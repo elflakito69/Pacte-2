@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador Rápido de Tramos - Semertaz</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+  <style>
+    body { margin: 0; padding: 0; display: flex; font-family: system-ui, sans-serif; height: 100vh; overflow: hidden; }
+    #sidebar { width: 350px; background: #0f172a; color: white; display: flex; flex-direction: column; }
+    #map { flex: 1; }
+    .header { padding: 15px; background: #1e293b; border-bottom: 1px solid #334155; }
+    .tramos-list { flex: 1; overflow-y: auto; padding: 10px; }
+    .tramo-item { padding: 10px; border: 1px solid #334155; margin-bottom: 8px; border-radius: 6px; cursor: pointer; background: #1e293b; }
+    .tramo-item:hover { background: #334155; }
+    .tramo-item.active { border-color: #3b82f6; background: #2563eb; }
+    .tramo-item.done { border-color: #10b981; border-left: 4px solid #10b981; }
+    .actions { padding: 15px; background: #1e293b; border-top: 1px solid #334155; }
+    button { width: 100%; padding: 10px; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
+    button:hover { background: #059669; }
+  </style>
+</head>
+<body>
+
+  <div id="sidebar">
+    <div class="header">
+      <h3 style="margin:0 0 5px 0;">Digitalizador de Tramos</h3>
+      <p style="margin:0; font-size:12px; color:#94a3b8;">1. Selecciona un tramo<br>2. Dibuja la línea en el mapa<br>3. Exporta cuando termines</p>
+    </div>
+    <div class="tramos-list" id="list"></div>
+    <div class="actions">
+      <button onclick="exportGeoJSON()">Exportar semertaz_tramos.geojson</button>
+    </div>
+  </div>
+  
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  <script src="dashboard/tramos.js"></script> <!-- Carga TRAMOS_CATALOG -->
+  <script>
+    const map = L.map('map').setView([-2.7393, -78.8467], 16);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 19
+    }).addTo(map);
+
+    // Cargar rutas originales como referencia (opaco)
+    fetch('assets/semertaz_routes.geojson').then(r => r.json()).then(data => {
+      L.geoJSON(data, {
+        style: { color: 'rgba(255, 165, 0, 0.3)', weight: 8 }
+      }).addTo(map);
+    });
+
+    const tramosData = window.TRAMOS_CATALOG || [];
+    const listEl = document.getElementById('list');
+    let activeTramoId = null;
+    const drawnTramos = {}; // Guardar geometries por id
+    const drawnLayers = {}; // Guardar capas para borrarlas si se rehacen
+
+    // Initialize Draw Control
+    const drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+    const drawControl = new L.Control.Draw({
+      draw: { polygon: false, marker: false, circlemarker: false, circle: false, rectangle: false, polyline: { shapeOptions: { color: '#3b82f6', weight: 5 } } },
+      edit: { featureGroup: drawnItems }
+    });
+    map.addControl(drawControl);
+
+    // Render list
+    function renderList() {
+      listEl.innerHTML = '';
+      tramosData.forEach(t => {
+        const div = document.createElement('div');
+        div.className = 'tramo-item' + (activeTramoId === t.id ? ' active' : '') + (drawnTramos[t.id] ? ' done' : '');
+        div.innerHTML = `<strong style="display:block;">Tramo ${t.id} (Ruta ${t.route_id})</strong><span style="font-size:11px;">${t.calle}</span>`;
+        div.onclick = () => {
+          activeTramoId = t.id;
+          renderList();
+        };
+        listEl.appendChild(div);
+      });
+    }
+    renderList();
+
+    map.on(L.Draw.Event.CREATED, function (event) {
+      const layer = event.layer;
+      if (!activeTramoId) {
+        alert("¡Primero selecciona un tramo de la lista de la izquierda!");
+        return;
+      }
+      
+      // Si ya tenía uno dibujado, lo borramos del mapa
+      if (drawnLayers[activeTramoId]) {
+        drawnItems.removeLayer(drawnLayers[activeTramoId]);
+      }
+
+      layer.feature = layer.feature || { type: 'Feature', properties: {} };
+      layer.feature.properties.id = activeTramoId;
+      
+      drawnItems.addLayer(layer);
+      drawnLayers[activeTramoId] = layer;
+      drawnTramos[activeTramoId] = layer.toGeoJSON();
+      
+      // Pasar al siguiente tramo automáticamente
+      const currentIndex = tramosData.findIndex(t => t.id === activeTramoId);
+      if (currentIndex < tramosData.length - 1) {
+        activeTramoId = tramosData[currentIndex + 1].id;
+      }
+      renderList();
+    });
+
+    function exportGeoJSON() {
+      const features = Object.values(drawnTramos);
+      if (features.length === 0) { alert('No has dibujado nada aún.'); return; }
+      const geojson = { type: 'FeatureCollection', features: features };
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(geojson, null, 2));
+      const downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute("href", dataStr);
+      downloadAnchorNode.setAttribute("download", "semertaz_tramos.geojson");
+      document.body.appendChild(downloadAnchorNode);
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
+    }
+  </script>
+</body>
+</html>

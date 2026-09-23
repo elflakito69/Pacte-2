@@ -1,0 +1,45 @@
+# Entorno virtual de Python (NO subir)
+venv/
+.venv/
+env/
+
+# Archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Base de datos (generada automáticamente por Flask)
+instance/
+backend/instance/
+backend/semertaz.db
+semertaz.db
+
+# Logs de errores
+*.log
+error.log
+
+# Variables de entorno secretas
+.env
+
+# Archivos temporales
+*.tmp
+temp*.txt
+diff.txt
+fix_syntax*.js
+check_syntax*.py
+find_history.py
+restore_files.py
+cleanup.py
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores de código
+.idea/
+
+# Archivos de subida temporales (solo mantener la carpeta vacía con .gitkeep)
+backend/uploads/*
+!backend/uploads/.gitkeep

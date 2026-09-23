@@ -4,334 +4,947 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEMERTAZ – Inicio de Sesión</title>
+  <meta name="description" content="SEMERTAZ - Sistema de Monitoreo y Control del Tránsito de Azogues. Plataforma institucional del Gobierno Autónomo Descentralizado de Azogues." />
+  <title>SEMERTAZ – Inicio de Sesión | GAD Municipal Azogues</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --navy: #002855;
+      --navy-dark: #001a38;
+      --navy-light: #003a7a;
+      --blue: #0057a8;
+      --blue-light: #0070cc;
+      --blue-accent: #1a85d4;
+      --white: #ffffff;
+      --off-white: #f4f7fb;
+      --gray-100: #e8edf4;
+      --gray-200: #d0d9e8;
+      --gray-400: #8fa3c0;
+      --gray-600: #4a6080;
+      --gray-800: #1e2d42;
+      --error: #c0392b;
+      --error-bg: #fdf0ef;
+      --success: #0a7c4e;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
+    html, body {
+      height: 100%;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--navy-dark);
+    }
+
+    /* ─── LAYOUT PRINCIPAL ─── */
+    .login-wrapper {
       display: flex;
+      height: 100vh;
+      min-height: 600px;
+    }
+
+    /* ─── PANEL IZQUIERDO: CIUDAD ─── */
+    .city-panel {
+      flex: 1.1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .city-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('/frontend/assets/azogues_bg.jpg');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+
+    .city-panel:hover .city-bg {
+      transform: scale(1.0);
+    }
+
+    /* Capas de overlay para efecto profesional */
+    .city-overlay-top {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(0, 26, 56, 0.55) 0%,
+        rgba(0, 40, 85, 0.40) 40%,
+        rgba(0, 10, 25, 0.75) 100%
+      );
+    }
+
+    .city-overlay-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 55%;
+      background: linear-gradient(
+        to top,
+        rgba(0, 15, 40, 0.95) 0%,
+        rgba(0, 26, 56, 0.80) 40%,
+        transparent 100%
+      );
+    }
+
+    /* Decoración: línea diagonal */
+    .city-panel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -2px;
+      width: 80px;
+      height: 100%;
+      background: linear-gradient(to right, transparent, var(--navy-dark));
+      z-index: 5;
+    }
+
+    .city-content {
+      position: relative;
+      z-index: 10;
+      padding: 48px 52px;
+    }
+
+    /* Logo GAD en el panel izquierdo */
+    .city-logo-area {
+      position: absolute;
+      top: 36px;
+      left: 44px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .city-logo-badge {
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 8px 16px 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .city-logo-badge img {
+      height: 40px;
+      width: auto;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+    }
+
+    .city-logo-text {
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .city-logo-text .line1 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .city-logo-text .line2 {
+      font-size: 10.5px;
+      font-weight: 400;
+      opacity: 0.82;
+      letter-spacing: 0.3px;
+    }
+
+    .city-tagline {
+      color: var(--white);
+    }
+
+    .city-tagline h2 {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+
+    .city-tagline h2 span {
+      color: #5bc0f8;
+    }
+
+    .city-tagline p {
+      font-size: 14.5px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 340px;
+      line-height: 1.6;
+    }
+
+    /* Estadísticas decorativas */
+    .city-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 24px;
+      font-weight: 800;
+      color: #5bc0f8;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+      margin-top: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ─── PANEL DERECHO: FORMULARIO ─── */
+    .form-panel {
+      width: 480px;
+      min-width: 420px;
+      background: var(--off-white);
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      animation: backgroundShift 20s ease-in-out infinite;
+      padding: 48px 52px;
+      position: relative;
+      overflow-y: auto;
     }
 
-    @keyframes backgroundShift {
-
-      0%,
-      100% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
+    /* Borde superior decorativo */
+    .form-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--navy) 0%, var(--blue-light) 60%, var(--blue-accent) 100%);
     }
 
-    .login-container {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    .form-inner {
       width: 100%;
-      max-width: 400px;
-      padding: 40px;
-      animation: slideInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      max-width: 360px;
+      animation: fadeSlideIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
-    @keyframes slideInUp {
+    @keyframes fadeSlideIn {
       from {
         opacity: 0;
-        transform: translateY(30px) scale(0.95);
+        transform: translateY(22px);
       }
-
       to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
       }
     }
 
-    .logo-section {
+    /* ─── HEADER DEL FORMULARIO ─── */
+    .form-header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 36px;
     }
 
-    .logo-circle {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 50%;
+    .alcaldia-logo-wrap {
+      margin: 0 auto 20px;
+      width: 100px;
+      height: 100px;
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: 0 4px 24px rgba(0, 40, 85, 0.12), 0 1px 4px rgba(0,0,0,0.06);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 36px;
-      font-weight: bold;
-      margin: 0 auto 20px;
-      animation: logoPulse 2s ease-in-out infinite;
-      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
+      padding: 10px;
+      border: 1.5px solid var(--gray-100);
+      transition: box-shadow 0.3s ease;
     }
 
-    @keyframes logoPulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-        box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);
-      }
-
-      50% {
-        transform: scale(1.05);
-        box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4);
-      }
+    .alcaldia-logo-wrap:hover {
+      box-shadow: 0 8px 32px rgba(0, 40, 85, 0.18);
     }
 
-    .logo-section h1 {
-      color: #111827;
-      font-size: 24px;
-      margin-bottom: 8px;
+    .alcaldia-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
-    .logo-section p {
-      color: #6b7280;
-      font-size: 14px;
+    .system-name {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 6px;
     }
 
+    .system-subtitle {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .form-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .form-divider::before,
+    .form-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-200);
+    }
+
+    .form-divider span {
+      font-size: 11px;
+      color: var(--gray-400);
+      font-weight: 500;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ─── FORMULARIO ─── */
     .form-group {
       margin-bottom: 20px;
     }
 
-    label {
+    .form-group label {
       display: block;
-      color: #111827;
+      font-size: 12.5px;
       font-weight: 600;
-      margin-bottom: 8px;
-      font-size: 14px;
+      color: var(--navy);
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
     }
 
-    input {
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray-400);
+      width: 18px;
+      height: 18px;
+      transition: color 0.25s ease;
+      pointer-events: none;
+    }
+
+    .form-group input {
       width: 100%;
-      padding: 12px 16px;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
-      font-size: 14px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 13px 14px 13px 44px;
+      border: 2px solid var(--gray-200);
+      border-radius: 10px;
+      font-size: 14.5px;
       font-family: inherit;
-      background: #f9fafb;
-    }
-
-    input:focus {
+      font-weight: 500;
+      background: var(--white);
+      color: var(--gray-800);
+      transition: all 0.25s ease;
       outline: none;
-      border-color: #667eea;
-      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-      background: white;
-      transform: translateY(-1px);
     }
 
-    input:hover {
-      border-color: #d1d5db;
+    .form-group input::placeholder {
+      color: var(--gray-400);
+      font-weight: 400;
     }
 
+    .form-group input:hover {
+      border-color: var(--gray-400);
+    }
+
+    .form-group input:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 4px rgba(0, 87, 168, 0.10);
+      background: var(--white);
+    }
+
+    .form-group input:focus + .input-icon,
+    .input-wrapper:focus-within .input-icon {
+      color: var(--blue);
+    }
+
+    /* Icono de mostrar/ocultar contraseña */
+    .toggle-password {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--gray-400);
+      padding: 0;
+      line-height: 0;
+      transition: color 0.2s ease;
+    }
+
+    .toggle-password:hover {
+      color: var(--blue);
+    }
+
+    /* ─── MENSAJE DE ERROR ─── */
+    .error-message {
+      background: var(--error-bg);
+      color: var(--error);
+      border: 1.5px solid #e8b4b0;
+      border-left: 4px solid var(--error);
+      padding: 11px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 18px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      animation: shakeIn 0.4s ease;
+    }
+
+    @keyframes shakeIn {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-5px); }
+      40% { transform: translateX(5px); }
+      60% { transform: translateX(-3px); }
+      80% { transform: translateX(3px); }
+    }
+
+    .error-message.show {
+      display: flex;
+    }
+
+    /* ─── BOTÓN PRINCIPAL ─── */
     .login-btn {
       width: 100%;
-      padding: 12px 16px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--blue) 100%);
+      color: var(--white);
       border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      letter-spacing: 0.5px;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      margin-top: 20px;
+      transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 40, 85, 0.30);
+      margin-top: 8px;
     }
 
     .login-btn::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.6s;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
 
     .login-btn:hover::before {
-      left: 100%;
+      opacity: 1;
     }
 
     .login-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 8px 24px rgba(0, 40, 85, 0.40);
     }
 
     .login-btn:active {
       transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(0, 40, 85, 0.25);
     }
 
-    .error-message {
-      background-color: #fee2e2;
-      color: #dc2626;
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      display: none;
-      font-size: 14px;
-      border-left: 4px solid #dc2626;
+    .login-btn:disabled {
+      background: var(--gray-200);
+      color: var(--gray-400);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
     }
 
-    .error-message.show {
-      display: block;
+    .btn-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
+    /* ─── LOADING ─── */
     .loading {
       display: none;
-      text-align: center;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      border-radius: 10px;
+      margin-top: 8px;
+      box-shadow: 0 4px 16px rgba(0, 40, 85, 0.25);
+    }
+
+    .loading.show {
+      display: flex;
     }
 
     .spinner {
-      border: 3px solid #f3f4f6;
-      border-top: 3px solid #667eea;
+      width: 20px;
+      height: 20px;
+      border: 2.5px solid rgba(255, 255, 255, 0.25);
+      border-top-color: var(--white);
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      animation: spin 1s linear infinite;
-      margin: 0 auto;
+      animation: spin 0.75s linear infinite;
     }
 
     @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
+      to { transform: rotate(360deg); }
     }
 
-    .demo-credentials {
-      background-color: #f0f9ff;
-      border-left: 4px solid #0ea5e9;
-      padding: 12px;
-      border-radius: 4px;
-      margin-top: 20px;
+    .loading p {
+      font-size: 13.5px;
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* ─── CREDENCIALES DE ACCESO ─── */
+    .credentials-info {
+      background: linear-gradient(135deg, rgba(0,40,85,0.04) 0%, rgba(0,87,168,0.06) 100%);
+      border: 1.5px solid var(--gray-200);
+      border-left: 3px solid var(--blue);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-top: 22px;
+    }
+
+    .credentials-info .cred-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .credentials-info .cred-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--gray-100);
       font-size: 12px;
-      color: #0c4a6e;
     }
 
-    .demo-credentials p {
-      margin: 4px 0;
+    .credentials-info .cred-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
-    .demo-credentials strong {
-      color: #0c4a6e;
+    .cred-role {
+      font-weight: 600;
+      color: var(--gray-800);
+      font-size: 11.5px;
+    }
+
+    .cred-vals {
+      font-family: 'Courier New', monospace;
+      color: var(--navy);
+      font-size: 11px;
+      background: rgba(0,40,85,0.07);
+      padding: 2px 7px;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+
+    /* ─── PIE DEL FORMULARIO ─── */
+    .form-footer {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .form-footer p {
+      font-size: 11px;
+      color: var(--gray-400);
+      line-height: 1.6;
+    }
+
+    .form-footer strong {
+      color: var(--navy);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 860px) {
+      .city-panel {
+        display: none;
+      }
+
+      .form-panel {
+        width: 100%;
+        min-width: unset;
+        padding: 40px 28px;
+      }
+
+      .form-inner {
+        max-width: 400px;
+      }
+
+      /* Mostrar fondo cuando no hay panel */
+      body {
+        background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 100%),
+                    url('/frontend/assets/azogues_bg.jpg') no-repeat center/cover;
+        background-blend-mode: multiply;
+      }
+
+      .form-panel {
+        background: rgba(244, 247, 251, 0.97);
+        min-height: 100vh;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .form-panel {
+        padding: 32px 20px;
+      }
+
+      .system-name {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="login-container">
-    <div class="logo-section">
-      <div class="logo-circle">S</div>
-      <h1>SEMERTAZ</h1>
-      <p>Sistema de Monitoreo y Control</p>
+  <div class="login-wrapper">
+
+    <!-- ── PANEL IZQUIERDO: CIUDAD DE AZOGUES ── -->
+    <div class="city-panel" aria-hidden="true">
+      <div class="city-bg"></div>
+      <div class="city-overlay-top"></div>
+      <div class="city-overlay-bottom"></div>
+
+      <!-- Logo GAD arriba -->
+      <div class="city-logo-area">
+        <div class="city-logo-badge">
+          <img src="/frontend/assets/azogues_logo.png" alt="Alcaldía de Azogues" />
+          <div class="city-logo-text">
+            <div class="line1">Alcaldía de Azogues</div>
+            <div class="line2">GAD Municipal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto ciudad abajo -->
+      <div class="city-content">
+        <div class="city-tagline">
+          <h2>Azogues<br /><span></span></h2>
+          <p>Gobierno Autónomo Descentralizado del cantón Azogues — Provincia del Cañar, Ecuador.</p>
+        </div>
+
+        
+      </div>
     </div>
 
-    <form id="loginForm">
-      <div class="error-message" id="errorMessage"></div>
+    <!-- ── PANEL DERECHO: FORMULARIO ── -->
+    <div class="form-panel">
+      <div class="form-inner">
 
-      <div class="form-group">
-        <label for="username">Usuario</label>
-        <input type="text" id="username" name="username" required placeholder="Ingresa tu usuario" />
+        <!-- Header con logo y nombre -->
+        <div class="form-header">
+          <div class="alcaldia-logo-wrap">
+            <img
+              src="/frontend/assets/azogues_logo.png"
+              alt="Escudo de Azogues — Alcaldía"
+              id="logoAlcaldia"
+              onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex';"
+            />
+            <!-- Fallback si no carga el logo -->
+            <div id="logoFallback" style="display:none; align-items:center; justify-content:center; width:100%; height:100%;">
+              <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="50" height="50" rx="12" fill="#002855"/>
+                <text x="25" y="33" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" font-weight="800" fill="white">S</text>
+              </svg>
+            </div>
+          </div>
+
+          <h1 class="system-name">SEMERTAZ</h1>
+          <p class="system-subtitle">Sistema de Monitoreo y Control</p>
+        </div>
+
+        <!-- Divider -->
+        <div class="form-divider">
+          <span>Acceso al sistema</span>
+        </div>
+
+        <!-- Mensaje de error -->
+        <div class="error-message" id="errorMessage" role="alert">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="8" cy="8" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M8 5V8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="8" cy="11" r="0.75" fill="currentColor"/>
+          </svg>
+          <span id="errorText"></span>
+        </div>
+
+        <!-- Formulario -->
+        <form id="loginForm" novalidate>
+
+          <!-- Usuario -->
+          <div class="form-group">
+            <label for="username">Usuario</label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                autocomplete="username"
+                required
+                placeholder="Ingrese su usuario"
+                aria-label="Nombre de usuario"
+              />
+              <svg class="input-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M3 17c0-3.314 3.134-6 7-6s7 2.686 7 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                autocomplete="current-password"
+                required
+                placeholder="Ingrese su contraseña"
+                aria-label="Contraseña"
+              />
+              <svg class="input-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.5" y="9" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M6.5 9V6.5a3.5 3.5 0 017 0V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+              <button type="button" class="toggle-password" id="togglePassword" aria-label="Mostrar u ocultar contraseña" title="Mostrar contraseña">
+                <!-- Ojo abierto (visible por defecto) -->
+                <svg id="eyeOpen" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.458 10C2.732 6.943 6.092 4.5 10 4.5s7.268 2.443 8.542 5.5C17.268 13.057 13.908 15.5 10 15.5S2.732 13.057 1.458 10z" stroke="currentColor" stroke-width="1.6"/>
+                  <circle cx="10" cy="10" r="2.5" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+                <!-- Ojo cerrado (oculto por defecto) -->
+                <svg id="eyeClosed" width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+                  <path d="M2 2l16 16M7.167 7.167A3.5 3.5 0 0013 12.5M4.167 4.167C2.8 5.222 1.776 6.527 1.458 8 2.732 11.057 6.092 13.5 10 13.5c1.2 0 2.34-.244 3.37-.678M7.5 3.696A9.57 9.57 0 0110 3.5c3.908 0 7.268 2.443 8.542 5.5a9.93 9.93 0 01-2.21 3.29" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Loading -->
+          <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Verificando credenciales...</p>
+          </div>
+
+          <!-- Botón de ingreso -->
+          <button type="submit" class="login-btn" id="loginBtn">
+            <span class="btn-content">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13 10l-5 5m5-5l-5-5m5 5H3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17 10a7 7 0 11-14 0 7 7 0 0114 0z" stroke="white" stroke-width="1.8"/>
+              </svg>
+              Iniciar Sesión
+            </span>
+          </button>
+        </form>
+
+        
+
+        <!-- Pie de página -->
+        <div class="form-footer">
+          <p>
+            <strong>SEMERTAZ</strong> · GAD Municipal Azogues<br />
+            Acceso restringido al personal autorizado
+          </p>
+        </div>
+
       </div>
-
-      <div class="form-group">
-        <label for="password">Contraseña</label>
-        <input type="password" id="password" name="password" required placeholder="Ingresa tu contraseña" />
-      </div>
-
-      <div class="loading" id="loading">
-        <div class="spinner"></div>
-        <p>Iniciando sesión...</p>
-      </div>
-
-      <button type="submit" class="login-btn" id="loginBtn">
-        Iniciar Sesión
-      </button>
-    </form>
-
-    <div class="demo-credentials">
-      <p><strong>Credenciales de prueba:</strong></p>
-      <p>Usuario: <code>admin</code></p>
-      <p>Contraseña: <code>123456</code></p>
-      <p style="margin-top: 8px;"><strong>Otros usuarios:</strong></p>
-      <p>supervisor1 / 123456</p>
-      <p>controller1 / 123456</p>
     </div>
   </div>
 
   <script>
-    const API_URL = `${window.location.protocol}//${window.location.hostname}:5000/api`;
+    const API_BASE = window.location.origin;
+    const API_URL = `${API_BASE}/api`;
 
+    /* ── Mostrar/ocultar contraseña ── */
+    const toggleBtn = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    const eyeOpen = document.getElementById('eyeOpen');
+    const eyeClosed = document.getElementById('eyeClosed');
 
-    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+    toggleBtn.addEventListener('click', () => {
+      const isPassword = passwordInput.type === 'password';
+      passwordInput.type = isPassword ? 'text' : 'password';
+      eyeOpen.style.display = isPassword ? 'none' : 'block';
+      eyeClosed.style.display = isPassword ? 'block' : 'none';
+      toggleBtn.title = isPassword ? 'Ocultar contraseña' : 'Mostrar contraseña';
+    });
+
+    /* ── Manejo del formulario ── */
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const errorText = document.getElementById('errorText');
+    const loading = document.getElementById('loading');
+    const loginBtn = document.getElementById('loginBtn');
+
+    function showError(message) {
+      errorText.textContent = message;
+      errorMessage.classList.add('show');
+    }
+
+    function hideError() {
+      errorMessage.classList.remove('show');
+      errorText.textContent = '';
+    }
+
+    function setLoading(isLoading) {
+      loading.classList.toggle('show', isLoading);
+      loginBtn.style.display = isLoading ? 'none' : 'block';
+    }
+
+    function getCoordinates() {
+      return new Promise((resolve) => {
+        if (!navigator.geolocation) {
+          return resolve({ latitude: null, longitude: null });
+        }
+
+        let finished = false;
+        const timer = setTimeout(() => {
+          if (!finished) {
+            finished = true;
+            resolve({ latitude: null, longitude: null });
+          }
+        }, 5000);
+
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            if (!finished) {
+              finished = true;
+              clearTimeout(timer);
+              resolve({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+              });
+            }
+          },
+          (_error) => {
+            if (!finished) {
+              finished = true;
+              clearTimeout(timer);
+              resolve({ latitude: null, longitude: null });
+            }
+          },
+          { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+        );
+      });
+    }
+
+    loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const username = document.getElementById('username').value;
+      const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value;
-      const errorMessage = document.getElementById('errorMessage');
-      const loading = document.getElementById('loading');
-      const loginBtn = document.getElementById('loginBtn');
 
-      // Limpiar error anterior
-      errorMessage.classList.remove('show');
-      errorMessage.textContent = '';
+      if (!username || !password) {
+        showError('Por favor ingrese su usuario y contraseña.');
+        return;
+      }
 
-      // Mostrar loading
-      loading.style.display = 'block';
-      loginBtn.disabled = true;
+      hideError();
+      setLoading(true);
+
+      // Obtener coordenadas (con timeout de 5 segundos)
+      const coords = await getCoordinates();
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
 
       try {
         const response = await fetch(`${API_URL}/auth/login`, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ username, password }),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username,
+            password,
+            latitude: coords.latitude,
+            longitude: coords.longitude
+          }),
+          signal: controller.signal,
         });
+
+        clearTimeout(timeoutId);
+        const contentType = response.headers.get('content-type') || '';
+        if (!contentType.includes('application/json')) {
+          throw new Error('El backend no respondió JSON. Verifica que el servidor esté activo en el puerto 5000.');
+        }
 
         const data = await response.json();
 
         if (!response.ok) {
-          throw new Error(data.message || 'Error al iniciar sesión');
+          throw new Error(data.message || 'Credenciales incorrectas. Intente de nuevo.');
         }
 
-        // Guardar token y usuario en localStorage
+        // Guardar token y redirigir
         localStorage.setItem('token', data.access_token);
         localStorage.setItem('user', JSON.stringify(data.user));
+        window.location.href = '/frontend/index.html';
 
-        // Redirigir al dashboard
-        window.location.href = '/';
       } catch (error) {
-        errorMessage.textContent = error.message;
-        errorMessage.classList.add('show');
-      } finally {
-        loading.style.display = 'none';
-        loginBtn.disabled = false;
+        clearTimeout(timeoutId);
+        if (error.name === 'AbortError') {
+          showError('⏱ Tiempo de espera agotado. El servidor no responde. Verifica que el backend esté encendido y que el Firewall de Windows permita el puerto 5000.');
+        } else if (error.name === 'TypeError' || error.message.includes('fetch')) {
+          showError('🔌 No se puede conectar al servidor. Asegúrate de que el backend esté corriendo y que el Firewall permita el puerto 5000.');
+        } else {
+          showError(error.message || 'Error desconocido. Contacta al administrador.');
+        }
+        setLoading(false);
       }
     });
 
-    // Si ya hay token, redirigir al dashboard
+    // Redirigir si ya tiene sesión activa
     if (localStorage.getItem('token')) {
-      window.location.href = '/';
+      window.location.href = '/frontend/index.html';
     }
   </script>
 </body>

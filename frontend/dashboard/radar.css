@@ -1,0 +1,323 @@
+/* ============================================================
+   SEMERTAZ — RADAR.CSS
+   Estilos del módulo de geolocalización estilo institucional
+   GAD Municipal Azogues
+   ============================================================ */
+
+#radar-map-container {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background: #07111f;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+}
+
+#semertaz-map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#radar-hud {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  background: rgba(7, 13, 26, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 16px 20px;
+  min-width: 260px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+#radar-hud .hud-title {
+  color: #e2e8f0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hud-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.hud-stat-label {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hud-stat-value {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.hud-stat-value.on-route { color: #22c55e; }
+.hud-stat-value.off-route { color: #ef4444; }
+.hud-stat-value.total { color: #38bdf8; }
+
+#hud-route-filter {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+#hud-route-filter label {
+  color: rgba(255,255,255,0.5);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 6px;
+}
+
+#hud-route-filter select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+}
+
+#hud-refresh-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  border-radius: 6px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#hud-refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#radar-controllers-list {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  background: rgba(7, 13, 26, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 14px;
+  min-width: 220px;
+  max-height: 400px;
+  overflow-y: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+#radar-controllers-list .list-title {
+  color: #e2e8f0;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.ctrl-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  border-radius: 4px;
+  padding-left: 4px;
+}
+
+.ctrl-list-item:hover { background: rgba(255,255,255,0.05); }
+
+.ctrl-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ctrl-dot.on { background: #22c55e; }
+.ctrl-dot.off { background: #ef4444; }
+
+.ctrl-info .ctrl-name { color: #ffffff; font-size: 12px; font-weight: 600; }
+.ctrl-info .ctrl-route { color: rgba(255,255,255,0.45); font-size: 10px; }
+
+/* Tooltips de zona (etiquetas R1-R18) */
+.transparent-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.transparent-tooltip::before { display: none !important; }
+
+/* Popup personalizado */
+.semertaz-popup .leaflet-popup-content-wrapper { background: transparent !important; box-shadow: none !important; padding: 0 !important; }
+.semertaz-popup .leaflet-popup-tip { display: none !important; }
+
+/* Marcador del controlador con nombre */
+.custom-radar-marker {
+  background: transparent;
+  border: none;
+}
+
+.marker-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  width: 60px;
+  height: 40px;
+}
+
+.marker-label {
+  background: rgba(15, 23, 42, 0.95);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: sans-serif;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.on-zone .marker-label { border-bottom: 2px solid #00ffcc; }
+.off-zone .marker-label { 
+  background: #dc2626; 
+  color: #fff; 
+  font-size: 13px; 
+  border: 2px solid #fff; 
+  box-shadow: 0 0 10px rgba(220,38,38,0.8);
+}
+
+.marker-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 2;
+  position: relative;
+}
+
+.on-zone .marker-dot {
+  background: #00ffcc;
+  box-shadow: 0 0 5px #00ffcc;
+}
+
+.off-zone .marker-dot {
+  background: #ff0055;
+  box-shadow: 0 0 5px #ff0055;
+}
+
+.marker-halo {
+  position: absolute;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.on-zone .marker-halo { animation: pulse-green 2s infinite; }
+.off-zone .marker-halo { animation: pulse-red 1s infinite; }
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(0,255,204,0.7); }
+  70% { box-shadow: 0 0 0 12px rgba(0,255,204,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,255,204,0); }
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(255,0,85,0.8); }
+  70% { box-shadow: 0 0 0 14px rgba(255,0,85,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,0,85,0); }
+}
+
+.no-signal .marker-label { border-bottom: 2px solid rgba(255,255,255,0.4); }
+.no-signal .marker-dot {
+  background: rgba(255,255,255,0.4);
+  box-shadow: 0 0 5px rgba(255,255,255,0.4);
+}
+
+#hud-route-sel option {
+  background: #0a1428;
+  color: #c8d8ee;
+  padding: 6px;
+}
+
+#hud-route-sel:focus {
+  border-color: rgba(26, 133, 212, 0.8);
+  box-shadow: 0 0 8px rgba(26, 133, 212, 0.3);
+}
+
+@media (max-width: 768px) {
+  #radar-map-container {
+    height: calc(100vh - 60px);
+    border-radius: 0;
+  }
+
+  #radar-hud {
+    top: 8px;
+    left: 8px;
+    min-width: 200px;
+    padding: 12px;
+  }
+
+  #radar-controllers-list {
+    display: none;
+  }
+}
+/* ═══ FILTRO OSM OSCURO — Radar SEMERTAZ ═══
+ * OSM Standard tile convertido a mapa oscuro tipo radar.
+ * Las rutas se alinean perfectamente porque fueron trazadas
+ * en geojson.io Standard (mismo tile OSM, mismas coordenadas).
+ * =====================================================*/
+.semertaz-osm-dark {
+  filter:
+    invert(1)
+    hue-rotate(180deg)
+    brightness(0.42)
+    contrast(1.1)
+    saturate(0.35);
+}
+
+/* Compatibilidad con nombre anterior */
+.semertaz-base-tile {
+  filter: brightness(0.25) saturate(0.4) hue-rotate(195deg) invert(0.05);
+}
+
+/* Cursor del mapa */
+#semertaz-map {
+  cursor: crosshair;
+}

@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: API SEMERTAZ
+  description: API interna para el Sistema de Estacionamiento Rotativo Tarifado de Azogues (SEMERTAZ).
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000/api
+    description: Servidor de Desarrollo
+paths:
+  /auth/login:
+    post:
+      summary: Autenticación de usuario
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Autenticación exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+        '401':
+          description: Credenciales inválidas
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SEMERTAZ - Digitalizador Vectorial de Tramos</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+  <style>
+    body { margin: 0; padding: 0; display: flex; height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    #sidebar { width: 350px; background: #f8fafc; border-right: 1px solid #cbd5e1; display: flex; flex-direction: column; }
+    #map { flex-grow: 1; }
+    .header { padding: 15px; background: #0f172a; color: white; }
+    .header h2 { margin: 0; font-size: 16px; }
+    .header p { margin: 5px 0 0 0; font-size: 12px; color: #94a3b8; }
+    .toolbar { padding: 10px; border-bottom: 1px solid #cbd5e1; background: white; display: flex; gap: 10px; }
+    .btn { padding: 8px 12px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 12px; }
+    .btn-export { background: #10b981; color: white; flex-grow: 1; }
+    .list-container { flex-grow: 1; overflow-y: auto; padding: 10px; }
+    .tramo-card { background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px; margin-bottom: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .tramo-title { font-size: 12px; font-weight: bold; color: #1e293b; margin-bottom: 8px; }
+    .tramo-route { font-size: 10px; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; color: #475569; }
+    .btn-draw { background: #3b82f6; color: white; width: 100%; margin-top: 5px; }
+    .btn-draw.drawn { background: #10b981; }
+    .status-badge { float: right; font-size: 10px; padding: 2px 6px; border-radius: 10px; }
+    .status-pending { background: #fee2e2; color: #ef4444; }
+    .status-done { background: #d1fae5; color: #10b981; }
+  </style>
+</head>
+<body>
+
+  <div id="sidebar">
+    <div class="header">
+      <h2>SEMERTAZ Vectorizer</h2>
+      <p>Digitalizador de Tramos Viales</p>
+    </div>
+    <div class="toolbar">
+      <button class="btn btn-export" onclick="exportGeoJSON()">📥 Descargar GeoJSON Final</button>
+    </div>
+    <div class="list-container" id="tramos-list">
+      <!-- Cards dynamically generated -->
+    </div>
+  </div>
+
+  <div id="map"></div>
+    
+
+
+  <!-- Cargar los tramos que el usuario ya tipeó -->
+  <script src="/frontend/dashboard/tramos.js"></script>
+  <script src="/frontend/dashboard/mapeador.js"></script>
+</body>
+</html>

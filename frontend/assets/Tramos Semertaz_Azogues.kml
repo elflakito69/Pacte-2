@@ -1,0 +1,2407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="1uffT9_oeJ8Ti02osMnfBB-cIqgU9GMWO">
+	<name>Tramos Semertaz_Azogues.kmz</name>
+	<gx:CascadingStyle kml:id="__managed_style_09BDB164CC41FCCDC603_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.32</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?id=168&amp;scale=4</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_09BDB164CC41FCCDC603_normal">
+		<Style>
+			<IconStyle>
+				<scale>1.1</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?id=168&amp;scale=4</href>
+				</Icon>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_09BDB164CC41FCCDC603">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<gx:CascadingStyle kml:id="__managed_style_0061FB747C41FCCDC604_highlight">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_0061FB747C41FCCDC604_normal">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0061FB747C41FCCDC604">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_0061FB747C41FCCDC604_normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_0061FB747C41FCCDC604_highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Folder id="5EDA412532000001">
+		<name>Tramos Semertaz_Azogues</name>
+		<open>1</open>
+		<styleUrl>#__managed_style_0061FB747C41FCCDC604</styleUrl>
+		<Placemark id="5EDA412532000002">
+			<name>Tramo 84 R17</name>
+			<description>CALLE CAMILO PONCE DESDE LA GENERAL ENRIQUEZ HASTA LA 10 DE AGOSTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84936142623121,-2.741110952870547,0 -78.84917503925456,-2.741785950496777,0 -78.84909375443523,-2.74204359388284,0 -78.84904733807876,-2.742232053577952,0 -78.84894387240143,-2.742634046853918,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000003">
+			<name>Tramo 200 R16</name>
+			<description>24 DE MAYO ENTRE SAMUEL ABAD Y AV. DE LOS ALCALDES
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84758922647586,-2.745046128464379,0 -78.84713926137957,-2.746958818360846,0 -78.84699757743063,-2.747280285524243,0 -78.84692172075988,-2.747351160220056,0 -78.84684422930283,-2.747486561299598,0 -78.84678859783679,-2.747592405839284,0 -78.84677230412863,-2.747701491945434,0 -78.84676489167065,-2.747771304320274,0 -78.8467610480931,-2.747776850954266,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000004">
+			<name>Tramo 37 R8</name>
+			<description>CALLE RIVERA ENTRE SUCRE Y SOLANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84796194231751,-2.738043145311477,0 -78.84775183782094,-2.738690168073244,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000005">
+			<name>Tramo 153 R7</name>
+			<description>CALLE RIVERA ENTRE 3 DE NOVIEMBRE Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84761656082136,-2.739194324138122,0 -78.84736861913424,-2.739958812139922,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000006">
+			<name>Tramo 41 R7</name>
+			<description>CALLE RIVERA ENTRE 3 DE NOVIEMBRE Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84761471441796,-2.739205934748997,0 -78.84736861913424,-2.739958812139922,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000007">
+			<name>Tramo 157 R4 </name>
+			<description>INGAPIRCA ENTRE CAMINO VECINAL Y RAFAEL MARIA GARCIA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84738792390861,-2.734520212661666,0 -78.84790676415039,-2.734144219558977,0 -78.8481295966356,-2.733989394596674,0 -78.84820432576065,-2.733931471631337,0 -78.84828989983268,-2.73387516116164,0 -78.84841810639534,-2.73377796542313,0 -78.84858007312781,-2.733681808857179,0 -78.8487078775795,-2.73356993007812,0 -78.8487572758026,-2.733520817331864,0 -78.84879730585644,-2.733456019621637,0 -78.84886400496443,-2.7332733761124,0 -78.84893323870594,-2.733102693741989,0 -78.84898716715617,-2.732958525295189,0 -78.84895153595293,-2.732849359072295,0 -78.84888641741929,-2.732785110483957,0 -78.84878462473662,-2.73269278086689,0 -78.84868146563177,-2.732604531589205,0 -78.84854540221816,-2.732464103015592,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000008">
+			<name>Tramo 107 R2</name>
+			<description>ORIENTE ENTRE AZUAY Y VEINTIMILLA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84511779832765,-2.736111303445691,0 -78.84507372888402,-2.736679482112833,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000009">
+			<name>Tramo 108 R2</name>
+			<description>ORIENTE ENTRE VEINTIMILLA Y SERRANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84505644630811,-2.736764768586726,0 -78.84489313821379,-2.737567690665833,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200000A">
+			<name>Tramo 156 R2</name>
+			<description>EMILIO ABAD ENTRE SERRANO Y SOLANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84602938738213,-2.738194114501474,0 -78.84614610166615,-2.737769029920354,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200000B">
+			<name>Tramo 166 R2</name>
+			<description>SERRANO ENTRE FRANCISCO CARRASCO Y 4 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84277080499909,-2.736850981520603,0 -78.84303704078668,-2.737018186695534,0 -78.84315946721271,-2.737053366100927,0 -78.84324065649943,-2.737073284293604,0 -78.8433815293301,-2.737142415350493,0 -78.84348108473954,-2.737171352349475,0 -78.84383691950303,-2.73728196844477,0 -78.84399707482622,-2.737318203520364,0 -78.84417086596413,-2.73737203405449,0 -78.84423083768485,-2.737408981527521,0 -78.84430816138627,-2.737459384384509,0 -78.84435679264196,-2.737516961089767,0 -78.84437620299279,-2.737564952142422,0 -78.84438485623805,-2.737633021094852,0 -78.84439044234175,-2.737661115491383,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200000C">
+			<name>Tramo 167 R2</name>
+			<description>SERRANO ENTRE 4 DE NOVIEMBRE ORIENTE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84440894994677,-2.737529915415095,0 -78.84464271364811,-2.737562626653571,0 -78.84485733039952,-2.737591487730058,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200000D">
+			<name>Tramo 182 R2</name>
+			<description>BOLIVAR ENTRE SOLANO Y SERRANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84653854092139,-2.737828542707471,0 -78.84642815833048,-2.738252705539921,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200000E">
+			<name>Tramo 235 R2</name>
+			<description>SERRANO ENTRE AV. FRANCISCO CARRASCO Y AV. DE LOS CAÑARIS
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84263360402564,-2.736790246277375,0 -78.84228486787003,-2.736631653426702,0 -78.84199204806393,-2.736400368093638,0 -78.84186958519169,-2.736297881324122,0 -78.84171283719277,-2.736172220361314,0 -78.84148483753101,-2.735976360693146,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200000F">
+			<name>Tramo 23 R2</name>
+			<description>CALLE GUAYAS ENTRE SERRANO Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84528834304756,-2.737729563866546,0 -78.8451801211835,-2.738533554685824,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000010">
+			<name>Tramo 184 R1</name>
+			<description>BOLIVAR ENTRE VEINTIMILLA Y AZUAY
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84694428395115,-2.736585455501948,0 -78.84678498852034,-2.73716058633723,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000011">
+			<name>Tramo 165 R1</name>
+			<description>FRANCISCO CARRASCO ENTRE VEINTIMILLA Y SERRANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84283015420547,-2.736170842730822,0 -78.84269166554242,-2.736787977314926,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000012">
+			<name>Tramo 164 R1</name>
+			<description>VEINTIMILLA ENTRE ORIENTE Y CARRASCO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84502837306269,-2.736698936403216,0 -78.84294951621108,-2.736177707615863,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000013">
+			<name>Tramo 163 R1 </name>
+			<description>AZUAY ENTRE FRANCISCO CARRASCO Y ROBERTO BRAVO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84303211271765,-2.73574160560689,0 -78.84329223307029,-2.735749495236932,0 -78.84354184696905,-2.73578541813924,0 -78.84400173184099,-2.735852827224846,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000014">
+			<name>Tramo 162 R1 </name>
+			<description>AZUAY ENTRE ORIENTE Y ROBERTO BRAVO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84509429657251,-2.736060658706804,0 -78.84405520519026,-2.73585961687477,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000015">
+			<name>Tramo 1 R1</name>
+			<description>CALLE AZUAY ENTRE ORIENTE Y AYACUCHO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84514800402469,-2.736049445187394,0 -78.84609959929757,-2.736316506789088,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000016">
+			<name>Tramo 2 R1</name>
+			<description>CALLE AZUAY ENTRE AYACUCHO Y SIMON BOLIVAR
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84614570423868,-2.736326761983007,0 -78.84691976347277,-2.736568958075404,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000017">
+			<name>tramo 9 R1</name>
+			<description>CALLE AYACUCHO ENTRE VEINTIMILLA Y AZUAY
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8460339198779,-2.736935028601311,0 -78.84611488546109,-2.736307920253642,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000018">
+			<name>Tramo 10 R1</name>
+			<description>CALLE AYACUCHO ENTRE AZUAY Y JUAN BAUTISTA CORDERO</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84611831914738,-2.736273563460613,0 -78.84626756129215,-2.735279128881393,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000019">
+			<name>Tramo 12 R1</name>
+			<description>CALLE VEINTIMILLA ENTRE ORIENTE Y AYACUCHO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84505892379555,-2.736701935726621,0 -78.84601842348408,-2.736953806188361,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200001A">
+			<name>Trano 103 R1</name>
+			<description>JUAN BAUTISTA CORDERO ENTRE MATOVELLE Y AYACUCHO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8473238976579,-2.735715706287166,0 -78.84628171699219,-2.735262933685619,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200001B">
+			<name>Tramo 104 R1</name>
+			<description>JUAN BAUTISTA CORDERO ENTRE AYACUCHO Y ORIENTE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84624698782029,-2.735236777258665,0 -78.84540253886782,-2.734823864727753,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200001C">
+			<name>Tramo 105 R1</name>
+			<description>AV. FRANCISCO CARRASCO ENTRE ORIENTE Y LOS EUCALIPTOS
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84516554656206,-2.734721820840716,0 -78.84490656826947,-2.734483817176374,0 -78.84473773371663,-2.734124781485182,0 -78.84461566549984,-2.734022737985346,0 -78.84370242167101,-2.733765790076609,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200001D">
+			<name>Tramo 106 R1</name>
+			<description>ORIENTE ENTRE JUAN BAUTISTA CORDERO Y AZUAY
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8452752966288,-2.734916710795636,0 -78.84513625625401,-2.73601783299986,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200001E">
+			<name>Tramo 160 R1</name>
+			<description>ORIENTE ENTRE INGAPIRCA Y JUAN BAUTISTA CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84546116097341,-2.734141888572125,0 -78.84533298505424,-2.734638351407842,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200001F">
+			<name>Tramo 161 R1</name>
+			<description>ROBERTO BRAVO ENTRE LOS EUCALIPTOS Y AZUAY
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84402780652835,-2.735829043568424,0 -78.84407738549122,-2.735107367374408,0 -78.84405382288878,-2.73487155313675,0 -78.84389562200187,-2.73464481731046,0 -78.84378976631128,-2.734489016489145,0 -78.84370090119042,-2.734321962407873,0 -78.84364484564344,-2.734218777767776,0 -78.84362025479598,-2.734155650012436,0 -78.84357886126499,-2.734061270083001,0 -78.84360119622767,-2.7338727309557,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000020">
+			<name>Tramo 7 R2</name>
+			<description>CALLE SERRANO ENTRE ORIENTE Y AYACUCHO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84490428274471,-2.737595866079808,0 -78.84589087560684,-2.737705046362435,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000021">
+			<name>Tramo 8 R2</name>
+			<description>CALLE AYACUCHO ENTRE SERRANO Y VEINTIMILLA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84601322419483,-2.736992880773409,0 -78.84591901131591,-2.73765802356272,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000022">
+			<name>Tramo 11 R2</name>
+			<description>CALLE SERRANO ENTRE EMILIO ABAD Y BOLIVAR
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84595848709625,-2.737696786957253,0 -78.84654103602755,-2.737808531278435,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000023">
+			<name>Tramo 13 R3</name>
+			<description>CALLE VEINTIMILLA ENTRE AYACUCHO Y BOLIVAR
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84677220083815,-2.737168918181044,0 -78.84606376751454,-2.736970269632233,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000024">
+			<name>Tramo 14 R3</name>
+			<description>CALLE VEINTIMILLA ENTRE BOLIVAR Y MATOVELLE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84679107878029,-2.737174711968075,0 -78.84710190402234,-2.737250289872484,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000025">
+			<name>Tramo 15 R3</name>
+			<description>CALLE VEINTIMILLA ENTRE MATOVELLE Y BENIGNO MALO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84717058714747,-2.737275283563025,0 -78.84783372273539,-2.737447011610995,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000026">
+			<name>Tramo 16 R3</name>
+			<description>CALLE VEINTIMILLA ENTRE BENIGNO MALO Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84785938747686,-2.737472735038919,0 -78.84869598825527,-2.737696721598065,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000027">
+			<name>Tramo 22 R3</name>
+			<description>CALLE BENIGNO MALO ENTRE SERRANO Y VEINTIMILLA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84784294257865,-2.737475623789783,0 -78.84775101558398,-2.737983727924055,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000028">
+			<name>Tramo 168 R3</name>
+			<description>CARLOS AGUILAR VAZQUEZ ENTRE AV. DEL MAESTRO Y 4 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84434359016636,-2.737704556332151,0 -78.84370507659486,-2.737736466363279,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000029">
+			<name>Tramo 183 R3</name>
+			<description>BOLIVAR ENTRE SERRANO Y VEINTIMILLA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84677616918185,-2.737186113552318,0 -78.84669160406415,-2.737508061048794,0 -78.84663542678807,-2.737668535122878,0 -78.84656967031518,-2.737797715139958,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200002A">
+			<name>Tramo 3 R4</name>
+			<description>CALLE AZUAY ENTRE BOLIVAR Y MATOVELLE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84695138625949,-2.736579881037265,0 -78.8473153733912,-2.736655937227912,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200002B">
+			<name>Tramo 4 R4</name>
+			<description>CALLE AZUAY ENTRE MATOVELLE Y BENIGNO MALO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84734472671322,-2.736663420291392,0 -78.8478984298452,-2.736838409608934,0 -78.8479356845835,-2.736857692586456,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200002C">
+			<name>Tramo 5 R4</name>
+			<description>CALLE BENIGNO MALO ENTRE AZUAY Y JUAN BAUTISTA CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84799222299598,-2.736855059267958,0 -78.84803658289793,-2.736499300767189,0 -78.84807333860518,-2.736430319752611,0 -78.84809020577276,-2.736396517244575,0 -78.8481442369434,-2.736350501526863,0 -78.84822133532204,-2.736326204895743,0 -78.84829357864209,-2.736389246114906,0 -78.84840404672154,-2.736454326287804,0 -78.84849904152766,-2.736534584028726,0 -78.8485902675976,-2.736569336781596,0 -78.84865017128811,-2.736596207662239,0 -78.84869078669391,-2.736593718490374,0 -78.84873661819186,-2.736555199136589,0 -78.84875826143833,-2.736489423196294,0 -78.84876649498607,-2.736320832506245,0 -78.84870676811056,-2.736122231229942,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200002D">
+			<name>Tramo 6 R4</name>
+			<description>CALLE AZUAY ENTRE BENIGNO MALO Y AV 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84804758111224,-2.736893650403282,0 -78.84820577987841,-2.736990290643784,0 -78.84830420149599,-2.737059936193278,0 -78.84841508898924,-2.73711716226178,0 -78.84855546421691,-2.737176712249309,0 -78.8486921304159,-2.737194522300579,0 -78.84871427543412,-2.73719383393786,0 -78.84876038595462,-2.737191944680629,0 -78.84881695557286,-2.737189735067748,0 -78.84886083590833,-2.737173093536789,0 -78.84890306628965,-2.737187630816293,0 -78.84892194402778,-2.737179684624013,0 -78.84891660291765,-2.737211085499185,0 -78.84896301264162,-2.737155231345578,0 -78.84901198772025,-2.737243311533151,0 -78.84901236480495,-2.737262330279774,0 -78.84899018102374,-2.737287678884854,0 -78.84883976233195,-2.737287263216129,0 -78.84868578066192,-2.737205684898572,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200002E">
+			<name>Tramo 17 R4</name>
+			<description>CALLE RAFAEL MARIA GARCIA ENTRE INGAPIRCA Y JUAN BAUTISTA CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84736163271525,-2.734575488697071,0 -78.84740333091207,-2.734921482724034,0 -78.84741038978667,-2.735265581412483,0 -78.84741211519396,-2.735511580034692,0 -78.8474059671904,-2.735729793280564,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200002F">
+			<name>Tramo 18 R4</name>
+			<description>CALLE MATOVELLE ENTRE JUAN BAUTISTA CORDERO Y AZUAY
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84748456796484,-2.735802734308744,0 -78.84736503762565,-2.736391679629304,0 -78.8473118870982,-2.736645491703205,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000030">
+			<name>Tramo 19 R4</name>
+			<description>CALLE MATOVELLE ENTRE AZUAY Y VEINTIMILLA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84730258549303,-2.736695597337824,0 -78.8471854877681,-2.737062754410773,0 -78.84714516968805,-2.737243833554024,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000031">
+			<name>Tramo 100 R4</name>
+			<description>AV. 24 DE MAYO ENTRE AZUAY Y JUAN BAUTISTA CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84894175587469,-2.735486098304637,0 -78.84905822814484,-2.736583124785017,0 -78.84908727657259,-2.73703714533812,0 -78.84909042887213,-2.737121452136051,0 -78.84905509094126,-2.737190992523012,0 -78.84903797341437,-2.737271073829404,0 -78.849067357685,-2.737322539644674,0 -78.8491110650492,-2.737386434632069,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000032">
+			<name>Tramo 101 R4</name>
+			<description>JUAN BAUTISTA CORDERO ENTRE 24 DE MAYO Y BENIGNO MALO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84887806213978,-2.735520520618786,0 -78.84876411930944,-2.735894225207376,0 -78.84862176812258,-2.736017637577377,0 -78.84844647042777,-2.73611971503725,0 -78.8483169300757,-2.73613880255437,0 -78.84838858078676,-2.736161151789094,0 -78.84853074301498,-2.736161773889186,0 -78.84868320697471,-2.736097562012515,0 -78.84878601981045,-2.735954798859441,0 -78.84876724166128,-2.7358966458901,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000033">
+			<name>Tramo 102 R4</name>
+			<description>JUAN BAUTISTA CORDERO ENTRE BENIGNO MALO Y MATOVELLO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8486843218104,-2.736094927256663,0 -78.84859680035572,-2.736141079606153,0 -78.84846123346802,-2.73616966548527,0 -78.8482514388652,-2.736122849988768,0 -78.84804590198627,-2.73602909756143,0 -78.84754271901537,-2.735804231736666,0 -78.84750787895327,-2.735787779206657,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000034">
+			<name>Tramo 133 R4 </name>
+			<description>BENIGNO MALO ENTRE JUAN BAUTISTA CORDERO Y ESCALINATAS
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84817956795447,-2.736313594385487,0 -78.84822408803332,-2.736316201357816,0 -78.84827641416034,-2.736367670674281,0 -78.84852255683522,-2.736546095587532,0 -78.84866347400106,-2.736593046458257,0 -78.84875200883148,-2.736539094858172,0 -78.84876684837558,-2.736323979948067,0 -78.84871132160933,-2.736123625687201,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000035">
+			<name>Tramo 151 R4</name>
+			<description>LUIS POZO TAMARIZ ENTRE 24 DE MAYO Y AZUAY
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84947101136348,-2.737933557438612,0 -78.84954166859119,-2.737831088479803,0 -78.84957767853717,-2.737560485017248,0 -78.84963517281278,-2.737391485603896,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000036">
+			<name>Tramo 152 R4</name>
+			<description>AZUAY ENTRE LUIS POZO TAMARIZ Y 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84964723576239,-2.737352229399139,0 -78.8494576524072,-2.737276795519028,0 -78.84930655380978,-2.737226688171859,0 -78.84924289021978,-2.737190304147972,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000037">
+			<name>Tramo 158 R4</name>
+			<description>INGAPIRCA ENTRE RAFE MARIA GARCIA Y MAYO 02
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84733703964326,-2.734520605086603,0 -78.84704445419615,-2.734339428783418,0 -78.84688245351425,-2.734254438664685,0 -78.84675434469926,-2.734210115182011,0 -78.84659159802935,-2.734158814187207,0 -78.84642875563968,-2.734134385579001,0 -78.84629518173296,-2.73415397218314,0 -78.84618396083262,-2.734191598155747,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000038">
+			<name>Tramo 159 R4</name>
+			<description>INGAPIRCA ENTRE CALLE MAYO 02 Y ORIENTE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84613902949189,-2.734199535581653,0 -78.8460795882459,-2.734230058490593,0 -78.84596838658274,-2.734257022794313,0 -78.84582684845279,-2.734266125551699,0 -78.84570062059342,-2.734233737176196,0 -78.84558402851248,-2.734195759773943,0 -78.84548762689931,-2.734138732699206,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000039">
+			<name>Tramo 185 R4</name>
+			<description>BOLIVAR ENTRE AZUAY Y J. B. CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84732339916172,-2.735780163889264,0 -78.84720227741508,-2.735925119853538,0 -78.84711897995409,-2.73604463872301,0 -78.84708448540859,-2.736112525460074,0 -78.84703823411063,-2.736231175023994,0 -78.84701663835163,-2.736295646410182,0 -78.84699909422876,-2.736372916648706,0 -78.84695780968767,-2.736541983188527,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200003A">
+			<name>Tramo 232 R4</name>
+			<description>AV 24 DE MAYO ENTRE JUAN BAUTISTA CORDERO Y MIGUEL VEINTIMILLA JARAMILLO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84889360445757,-2.73546924568903,0 -78.84891751407586,-2.735360901503655,0 -78.8489466573113,-2.73507294631878,0 -78.84898063155272,-2.734968468301347,0 -78.84904576260011,-2.734767292626311,0 -78.84918647374823,-2.734473520401471,0 -78.84931346875851,-2.73423777208691,0 -78.8494374018146,-2.733945821443098,0 -78.84948875512873,-2.73372606181458,0 -78.84952859178993,-2.733420723715398,0 -78.84955053534902,-2.733064364007671,0 -78.84959280312944,-2.732783478654633,0 -78.84963518055854,-2.73264681398868,0 -78.84977056811391,-2.732474855227142,0 -78.85000350075715,-2.732221698949323,0 -78.85011508827094,-2.732102050414118,0 -78.85021912595984,-2.731948774418105,0 -78.85030639502565,-2.731792858707315,0 -78.85040322504504,-2.73156378754146,0 -78.85043959013956,-2.731488717020619,0 -78.85051673200861,-2.731294755157408,0 -78.8506677178007,-2.730998543515782,0 -78.85076187655473,-2.73087761324411,0 -78.85093326149725,-2.730901019304512,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200003B">
+			<name>Tramo 24 R5</name>
+			<description>CALLE SUCRE ENTRE GUAYAS Y EMILIO ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84520772520054,-2.738537201219208,0 -78.84594063238703,-2.738718906634618,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200003C">
+			<name>Tramo 25 R5</name>
+			<description>CALLE SUCRE ENTRE EMILIO ABAD Y BOLIVAR
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84597718664385,-2.738725488087467,0 -78.84637699595901,-2.738816336165427,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200003D">
+			<name>Tramo 27 R5</name>
+			<description>CALLE EMILIO ABAD ENTRE 3 DE NOVIEMBRE Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84594072809746,-2.738745119844992,0 -78.84586535851837,-2.739012677262072,0 -78.84584170974159,-2.739134571024002,0 -78.84581382152838,-2.739272954927011,0 -78.84576021573177,-2.739445976791621,0 -78.84572874738876,-2.739528343775785,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200003E">
+			<name>Tramo 28 R5</name>
+			<description>CALLE EMILIO ABAD ENTRE SUCRE Y SOLANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84595775415586,-2.738670979461804,0 -78.84601474052297,-2.73825428270969,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200003F">
+			<name>Tramo 65 R5</name>
+			<description>CALLE SUCRE ENTRE 4 DE NOVIEMBRE Y GUAYAS
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84515799209441,-2.738526819992644,0 -78.84470526892412,-2.738413855654791,0 -78.84443278993635,-2.738348778542039,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000040">
+			<name>Tramo 66 R5</name>
+			<description>CALLE GUAYAS ENTRE SUCRE Y 3 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84516741760436,-2.738567726652799,0 -78.84510782870105,-2.738949929675574,0 -78.84508033643613,-2.73938675005389,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000041">
+			<name>Tramo 109 R5</name>
+			<description>ORIENTE ENTRE SERRANO Y CUATRO DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84487366394892,-2.737663948072514,0 -78.8448785906134,-2.737936812799441,0 -78.84486374978594,-2.738017762347228,0 -78.84482846721592,-2.738069076855796,0 -78.84479794935838,-2.738087233594202,0 -78.84476604599595,-2.73810786384894,0 -78.84473826944443,-2.738120250228859,0 -78.84467829920794,-2.738135602374304,0 -78.84456066195949,-2.738151105512877,0 -78.84444664418743,-2.738155657940092,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000042">
+			<name>Tramo 180 R5</name>
+			<description>BOLIVAR ENTRE 3 DE NOVIEMBRE Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84638047837258,-2.738851460033237,0 -78.84618042765071,-2.739660990960946,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000043">
+			<name>Tramo 234 R5</name>
+			<description>CALLE CUATRO DE NOVIEMBRE ENTRE CALLE ORIENTE Y CARLOS AGUILAR VAZQUEZ
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8443805437725,-2.737730484165418,0 -78.84437735229653,-2.73810694628291,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000044">
+			<name>Tramo 20 R6</name>
+			<description>CALLE MATOVELLE ENTRE VEINTIMILLA Y SERRANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84712114570549,-2.737300518385068,0 -78.84697913145244,-2.737876849014955,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000045">
+			<name>Tramo 21 R6</name>
+			<description>CALLE SERRANO ENTRE MATOVELLE Y BENIGNO MALO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84771696430711,-2.738011072076424,0 -78.84749446183548,-2.737990972899116,0 -78.84738838466885,-2.737976609449726,0 -78.84728843798779,-2.737972166258122,0 -78.8471735099003,-2.737949504062591,0 -78.84705359872386,-2.737926091811098,0 -78.84698533286537,-2.737902119263601,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000046">
+			<name>Tramo 29 R6</name>
+			<description>CALLE LUIS CORDERO ENTRE VEINTIMILLA Y SERRANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84872474341766,-2.737726896393635,0 -78.84869930517007,-2.738161473559305,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000047">
+			<name>Tramo 38 R6</name>
+			<description>CALLE SERRANO ENTRE BENIGNO MALO Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8477882698517,-2.738011505945282,0 -78.84814699209618,-2.737999210334074,0 -78.8483240080309,-2.738046982714177,0 -78.8484737129186,-2.738100535803685,0 -78.8486297616995,-2.738149362284266,0 -78.84868024279268,-2.738168855065253,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000048">
+			<name>Tramo 154 R6</name>
+			<description>SERRANO ENTRE BOLIVAR Y MATOVELLE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84695740993548,-2.737889771102394,0 -78.84657782688755,-2.737814867238281,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000049">
+			<name>Tramo 26 R7</name>
+			<description>CALLE SUCRE ENTRE BOLIVAR Y MATOVELLE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84680055312799,-2.738933019102043,0 -78.84639842627926,-2.738833531470738,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200004A">
+			<name>Tramo 37 R7</name>
+			<description>CALLE SOLANO ENTRE MATOVELLE Y RIVERA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84697671379841,-2.738373234911907,0 -78.84737055886741,-2.738517479373716,0 -78.84760039082077,-2.738622341545203,0 -78.84773988599289,-2.738691458434446,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200004B">
+			<name>Tramo 42 R7</name>
+			<description>CALLE SUCRE ENTRE MATOVELLE Y RIVERA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84759526459467,-2.739167779165864,0 -78.84680772987403,-2.738930141333618,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200004C">
+			<name>Tramo 155 R7</name>
+			<description>CALLE SOLANO ENTRE BOLIVAR Y MATOVELLE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84690969507874,-2.738355895159922,0 -78.84666551325779,-2.73831176143158,0 -78.84644644266923,-2.738267552017623,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200004D">
+			<name>Tramo 181 R7</name>
+			<description>BOLIVAR ENTRE SUCRE Y SOLANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84641510931887,-2.738311684833279,0 -78.84636779253051,-2.738809107436746,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200004E">
+			<name>Tramo 30 R8</name>
+			<description>CALLE LUIS CORDERO ENTRE SOLANO Y SERRANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8486966452969,-2.738188966547805,0 -78.84852949322658,-2.738947171853284,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200004F">
+			<name>Tramo 31 R8</name>
+			<description>CALLE LUIS CORDERO ENTRE SOLANO Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8485010686022,-2.739046527868517,0 -78.84841918115495,-2.739375718439858,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000050">
+			<name>Tramo 33 R8</name>
+			<description>CALLE SOLANO ENTRE LUIS CORDERO Y 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84855431700035,-2.739009828522922,0 -78.84939919905848,-2.739231976037799,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000051">
+			<name>Tramo 35 R8</name>
+			<description>CALLE SOLANO ENTRE RIVERA Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84849245414132,-2.738984820718207,0 -78.84773819672132,-2.738707088783054,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000052">
+			<name>Tramo 36 R7</name>
+			<description>CALLE RIVERA ENTRE SUCRE Y SOLANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84775426401843,-2.73870974254477,0 -78.84763739437784,-2.739141764796802,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000053">
+			<name>Tramo 98 R8</name>
+			<description>AV. 24 DE MAYO ENTRE SOLANO Y SERRANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84942655148794,-2.739217108881925,0 -78.8494793585685,-2.738748886882368,0 -78.84945396496487,-2.738506068453314,0 -78.84940496383763,-2.738276990107409,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000054">
+			<name>Tramo 99 R8</name>
+			<description>AV. 24 DE MAYO ENTRE SERRANO Y AZUAY
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84915417046891,-2.737398480026175,0 -78.84937783801317,-2.738222936673691,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000055">
+			<name>Tramo 44 R9</name>
+			<description>CALLE MATOVELLE ENTRE SUCRE Y 3 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84679083653243,-2.738959419811683,0 -78.84656435312172,-2.7397871699692,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000056">
+			<name>Tramo 45 R9</name>
+			<description>CALLE MATOVELLE ENTRE 3 DE NOVIEMBRE Y 10 DE AGOSTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84655099469217,-2.739761189930089,0 -78.84644115069325,-2.740130606756681,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000057">
+			<name>Tramo 46 R9</name>
+			<description>CALLE MATOVELLE ENTRE 10 DE AGOSTO Y TENEMAZA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84642976925072,-2.740189106272013,0 -78.84628066226911,-2.740833824921371,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000058">
+			<name>Tramo 47 R9</name>
+			<description>CALLE TENEMAZA ENTRE BOLIVAR Y RIVERA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84610645602719,-2.740801764146737,0 -78.84629897269561,-2.740847381360381,0 -78.84667938415167,-2.740939266104092,0 -78.84708665190709,-2.741063284433857,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000059">
+			<name>Tramo 48 R9</name>
+			<description>CALLE 10 DE AGOSTO ENTRE BOLIVAR Y MATOVELLE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84611051786518,-2.740034063907771,0 -78.84642140793461,-2.740143428266781,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200005A">
+			<name>Tramo 49 R9</name>
+			<description>CALLE 10 DE AGOSTO ENTRE MATOVELLE Y RIVERA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.847276759211,-2.740401812789487,0 -78.84646179287232,-2.740145775859142,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200005B">
+			<name>Tramo 178 R9</name>
+			<description>BOLIVAR ENTRE TENEMAZA Y 10 DE AGOSTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84611308369182,-2.740026566426304,0 -78.84605711239585,-2.740375530166077,0 -78.846041280881,-2.740520534294605,0 -78.84607471659122,-2.740787717240532,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200005C">
+			<name>Tramo 186 R9</name>
+			<description>TRES DE NOVIEMBRE ENTRE BOLIVAR Y MATOVELLE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84618161711653,-2.739661711185967,0 -78.84656875300206,-2.739751693521099,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200005D">
+			<name>Tramo 32 R10</name>
+			<description>CALLE SUCRE ENTRE LUIS CORDERO Y 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84927957344513,-2.73964708384376,0 -78.84843216901115,-2.739403124213683,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200005E">
+			<name>Tramo 43 R10</name>
+			<description>CALLE SUCRE ENTRE RIVERA Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84762835199415,-2.739174742782874,0 -78.84839776291302,-2.73938766483133,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200005F">
+			<name>Trano 52 R10</name>
+			<description>CALLE 3 DE NOVIEMBRE ENTRE LUIS CORDERO Y 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84823662631381,-2.740156121189626,0 -78.84904243007435,-2.740356759723922,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000060">
+			<name>Tramo 54 R10</name>
+			<description>CALLE LUIS CORDERO ENTRE 3 DE NOVIEMBRE Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84840981989211,-2.739415739342654,0 -78.84822167306376,-2.740126937063102,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000061">
+			<name>Tramo 96 R10</name>
+			<description>AV 24 DE MAYO ENTRE TRES DE NOVIEMBRE Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84905836042104,-2.740347613676399,0 -78.8492966427709,-2.739657291256028,0 -78.84937924245757,-2.739685379205443,0 -78.8491381864103,-2.74037494416573,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000062">
+			<name>Tramo 97 R10</name>
+			<description>AV. 24 DE MAYO ENTRE SUCRE Y SOLANO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84944072620836,-2.739284748391372,0 -78.84934606856302,-2.739627135509524,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000063">
+			<name>Tramo 55 R11</name>
+			<description>CALLE LUIS CORDERO ENTRE GENERAL ENRIQUEZ Y TENEMAZA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84790043988167,-2.741287767737925,0 -78.84758810769375,-2.742386835146558,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000064">
+			<name>Tramo 56 R11</name>
+			<description>CALLE LUIS CORDERO ENTRE TENEMAZA Y 10 DE AGOSTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84807511131491,-2.740704615469294,0 -78.84791784179903,-2.741276407093207,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000065">
+			<name>Tramo 58 R11</name>
+			<description>CALLE 10 DE AGOSTO ENTRE LUIS CORDERO Y 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84808727990558,-2.740697304486889,0 -78.84884213346326,-2.740925546716077,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000066">
+			<name>Tramo 59 R11</name>
+			<description>CALLE TENEMAZA ENTRE RIVERA Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8478749874822,-2.741280382673362,0 -78.84713128013152,-2.741085578593596,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000067">
+			<name>Tramo 60 R11</name>
+			<description>CALLE TENEMAZA ENTRE LUIS CORDERO Y 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84864507324411,-2.741461140075817,0 -78.84791199772697,-2.741289020704897,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000068">
+			<name>Tramo 93 R11</name>
+			<description>AV 24 DE MAYO ENTRE GENERAL ENRIQUEZ Y TENEMAZA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84868985430938,-2.741498342137842,0 -78.84835883144987,-2.742519866835343,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000069">
+			<name>Tramo 94 R11</name>
+			<description>AV 24 DE MAYO ENTRE LA TENEMAZA Y 10 DE AGOSTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84886392805609,-2.74097359466527,0 -78.84870546496994,-2.741458466416668,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200006A">
+			<name>Tramo 95 R11</name>
+			<description>AV 24 DE MAYO ENTRE LA 10 DE AGOSTO Y 3 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8490888345261,-2.740395369042981,0 -78.84888699693799,-2.740911474648316,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200006B">
+			<name>Tramo 40 R12</name>
+			<description>CALLE RIVERA ENTRE 10 DE AGOSTO Y 3 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84736476575694,-2.739984038872901,0 -78.84728127071634,-2.740411413156161,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200006C">
+			<name>Tramo 50 R12</name>
+			<description>CALLE 3 DE NOVIEMBRE ENTRE MATOVELLE Y RIVERA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84660248922157,-2.739780967529477,0 -78.84736238174743,-2.739957144803451,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200006D">
+			<name>Tramo 51 R12</name>
+			<description>CALLE 3 DE NOVIEMBRE ENTRE RIVERA Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84819704215806,-2.740145529750812,0 -78.84738846153296,-2.73997380369748,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200006E">
+			<name>Tramo 53 R12</name>
+			<description>CALLE LUIS CORDERO ENTRE 10 DE AGOSTO Y 3 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84821148791983,-2.740170212984202,0 -78.84808136527762,-2.740672693880598,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200006F">
+			<name>Tramo 57 R12</name>
+			<description>CALLE 10 DE AGOSTO ENTRE RIVERA Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8480621452308,-2.740688146309731,0 -78.84729292595841,-2.740416715136607,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000070">
+			<name>Tramo 39 R13</name>
+			<description>CALLE RIVERA ENTRE TENEMAZA Y 10 DE AGOSTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84727138733444,-2.7404421528283,0 -78.84710608533192,-2.741074618186348,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000071">
+			<name>Tramo 61 R13</name>
+			<description>CALLE RIVERA ENTRE TENEMAZA Y GENERAL ENRIQUEZ
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84710409511024,-2.741123928920424,0 -78.84680129263455,-2.742234529021967,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000072">
+			<name>Tramo 62 R 12</name>
+			<description>CALLE GENERAL ENRIQUEZ ENTRE BOLIVAR Y RIVERA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84679408353878,-2.742253689436842,0 -78.84633911992394,-2.742168794422908,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000073">
+			<name>Tramo 62 R13</name>
+			<description>CALLE GENERAL ENRIQUEZ ENTRE RIVERA Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84681151391736,-2.742249118096487,0 -78.84756320714962,-2.742397729736495,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000074">
+			<name>Tramo 64 R13</name>
+			<description>CALLE GENERAL ENRIQUEZ ENTRE LUIS CORDERO Y 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.847588925984,-2.742418007756994,0 -78.84828749341679,-2.74253896226238,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000075">
+			<name>Tramo 177 R13</name>
+			<description>BOLIVAR ENTRE GRAL ENRIQUEZ Y TENEMAZA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84633236729276,-2.742166351668666,0 -78.84608227506266,-2.7408280468266,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000076">
+			<name>Tramo 73 R14</name>
+			<description>CALLE EMILIO ABAD ENTRE J.J. OLMEDO Y TENEMAZA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84586977031843,-2.740833461623928,0 -78.84590638353087,-2.741009500963605,0 -78.84593110123252,-2.741123430945624,0 -78.84600320818865,-2.741471213598099,0 -78.84607592908564,-2.741719034404337,0 -78.84607021865165,-2.741733496474975,0 -78.84607692398275,-2.741735706368347,0 -78.84609071461382,-2.741818009495503,0 -78.8461039136437,-2.741976631010716,0 -78.84610085103462,-2.742146132357122,0 -78.84610045975923,-2.742228850479429,0 -78.84610093778021,-2.742307520458973,0 -78.84610310009975,-2.742459993430742,0 -78.84609854719582,-2.74269029211046,0 -78.8460957210622,-2.742739016017774,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000077">
+			<name>Tramo 74 R14</name>
+			<description>CALLE EMILIO ABAD ENTRE TENEMAZA Y ESCALINATA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84565245027483,-2.739781421619448,0 -78.84567248074028,-2.740037063949282,0 -78.84568177981382,-2.74013770528828,0 -78.84568835175952,-2.740207002402837,0 -78.84569314962249,-2.740279609456912,0 -78.84570222504365,-2.740351818006546,0 -78.84572248313296,-2.740416211650461,0 -78.84574092333591,-2.740477124043398,0 -78.84578766590218,-2.740592276639256,0 -78.84582211169511,-2.740694155116616,0 -78.84585649315456,-2.740793568434297,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000078">
+			<name>Tramo 75 R14</name>
+			<description>CALLE EMILIO ABAD ENTRE ESCALINATA Y VICENTE MALDONADO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84564669034721,-2.739777819092051,0 -78.84566750271789,-2.739971313132747,0 -78.84567464564194,-2.740049037175436,0 -78.84569048758358,-2.740204999086548,0 -78.84569293773097,-2.740307737261038,0 -78.84570848077647,-2.740391594416947,0 -78.84574087316456,-2.740477460558948,0 -78.84578328751142,-2.7405786405982,0 -78.84586299704942,-2.740822030721984,0 -78.84590820206918,-2.741020252222226,0 -78.84592043712861,-2.741073382379489,0 -78.84593358655049,-2.741135185130447,0 -78.84595807385944,-2.741258204423653,0 -78.84598409401215,-2.741373932818192,0 -78.84601247434294,-2.741491967397369,0 -78.84604810130908,-2.741630540051557,0 -78.84607763626209,-2.741755055176915,0 -78.84609911687777,-2.741881213074457,0 -78.84610088920961,-2.74194922417492,0 -78.84610114634694,-2.742027717014507,0 -78.84609932579976,-2.742180200017909,0 -78.84610009320971,-2.742318345253374,0 -78.84610069871049,-2.742444816034248,0 -78.8461032641523,-2.742581662960513,0 -78.84610260244779,-2.742721398857057,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000079">
+			<name>Tramo 76 R14</name>
+			<description>CALLE EMILIO ABAD ENTRE VICENTE MALDONADO Y JOSE PERALTA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84610257700683,-2.742673701402851,0 -78.84607855750464,-2.743004695938762,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200007A">
+			<name>Tramo 77 R14</name>
+			<description>CALLE EMILIO ABAD ENTRE JOSE PERALTA Y AURELIO JARAMILLO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84607918014281,-2.743046984929854,0 -78.84610506644123,-2.743342389703354,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200007B">
+			<name>Tramo 112 R14</name>
+			<description>4 DE NOVIEMBRE ENTRE AV DE LA VIRGEN Y ATAHUALPA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84400752525968,-2.739944466370185,0 -78.84386424782826,-2.740569739861847,0 -78.84381609604895,-2.74071808328782,0 -78.8437982572417,-2.740791623982193,0 -78.84378896835641,-2.740864897318676,0 -78.84377270676123,-2.740986655290181,0 -78.84377454933718,-2.74107712539098,0 -78.84379101164252,-2.741269009033223,0 -78.84381941016785,-2.741460695556555,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200007C">
+			<name>Tramo 113 R 14</name>
+			<description>ATAHUALPA ENTRE 4 DE NOVIEMBRE Y JOSE JOAQUIN DE OLMEDO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84379457926683,-2.740804418093177,0 -78.84377406809016,-2.740971871325936,0 -78.84377851038862,-2.741133158194995,0 -78.84379514746317,-2.741327932769414,0 -78.84382692613241,-2.741492420653264,0 -78.84385485835088,-2.741655581576097,0 -78.84387172896261,-2.741712328197745,0 -78.84396934162363,-2.741766826017228,0 -78.84410249991492,-2.741781426779707,0 -78.84438736268281,-2.741803150108803,0 -78.84462921794261,-2.741848485404472,0 -78.84487488182133,-2.74186622139068,0 -78.84504217441658,-2.741874218656909,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200007D">
+			<name>Tramo 114 R14</name>
+			<description>JOSE JOAQUIN DE OLMEDO ENTRE TENAMAZA Y ATAHUALPA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84506035610393,-2.741856672069858,0 -78.84509000953571,-2.741586203867156,0 -78.84511586075439,-2.74132988456104,0 -78.84513559578301,-2.741123563676236,0 -78.84521404703101,-2.740903690471923,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200007E">
+			<name>Tramo 115 R14</name>
+			<description>JOSE JOAQUIN DE OLMEDO ENTRE ATAHUALPA Y VICENTE MALDONADO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84505223882401,-2.741893783461657,0 -78.84523259027989,-2.742633267017319,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200007F">
+			<name>Tramo 116 R14</name>
+			<description>VICENTE MALDONADO ENTRE EMILIO ABAD Y JOSE JOAQUIN DE OLMEDO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84525716047629,-2.742660100284016,0 -78.84567192877941,-2.742648056017267,0 -78.84607948782393,-2.74266600304443,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000080">
+			<name>Tramo 117 R14</name>
+			<description>JOSE JOAQUIN DE OLMEDO ENTRE VICENTE MALDONADO Y JOSE PERALTA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84523611117221,-2.742684595942587,0 -78.84523586929106,-2.742808503025539,0 -78.84521988011977,-2.742948848984532,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000081">
+			<name>Tramo 118 R14</name>
+			<description>JOSE PERALTA ENTRE JOSE JOAQUIN DE OLMEDO Y EMILIO ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84606091378744,-2.743000453728963,0 -78.84522797730875,-2.742964902286793,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000082">
+			<name>Tramo 119 R14</name>
+			<description>JOSE JOAQUIN DE OLMEDO ENTRE JOSE PERALTA Y AURELIO JARAMILLO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84521319018768,-2.742989486177105,0 -78.84515605115635,-2.74344410508657,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000083">
+			<name>Tramo 120 R14</name>
+			<description>AV A JARAMILLO ENTRE EMILIO ABAD Y JOSE JOAQUIN DE OLMEDO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84516666368812,-2.743465320607432,0 -78.84609308022073,-2.743358213534727,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000084">
+			<name>Tramo 121 R14</name>
+			<description>JOSE JOAQUIN DE OLMEDO ENTRE AURELIO JARAMILLO Y S/N
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84515312073178,-2.74348692656517,0 -78.84511473754397,-2.744169962470432,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000085">
+			<name>Tramo 122 R14 </name>
+			<description>AURELIO JARAMILLO ENTRE EMILIO ABAD Y BOLIVAR
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84611017098079,-2.743366744314065,0 -78.84659899821547,-2.743398912184757,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000086">
+			<name>Tramo 125 R14</name>
+			<description>EMILIO ABAD ENTRE AURELIO JARAMILLO Y EMILIO IZQUIERDO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84610364750357,-2.743382545431977,0 -78.84630653911898,-2.743908672362881,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000087">
+			<name>Tramo 126 R14</name>
+			<description>EMILIO ABAD ENTRE EMILIO IZQUIERDO Y SAMUEL ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84631852527585,-2.74397625325847,0 -78.84632451459085,-2.744115168460617,0 -78.84630864356373,-2.744239479910652,0 -78.84629235821437,-2.744356262528957,0 -78.8462554001361,-2.744496125427101,0 -78.84623470076274,-2.744581658956026,0 -78.84622913342706,-2.744620052641915,0 -78.84622768000652,-2.744654014073829,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000088">
+			<name>Tramo 127 R14</name>
+			<description>EMILIO ABAD ENTRE SAMUEL ABAD Y JUAN MOLTALVO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8462141373484,-2.744700445487262,0 -78.84621232815176,-2.744839796253587,0 -78.84622365331536,-2.744881314493177,0 -78.84624282805486,-2.744983701740737,0 -78.84631624804231,-2.745208013235434,0 -78.84636464704607,-2.745319220066766,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000089">
+			<name>Tramo 173 R14</name>
+			<description>4 DE NOVIEMBRE ENTRE ATAHUALPA Y AV. RUMIÑAHUI
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8437996778687,-2.741480750061061,0 -78.84376788548636,-2.741544701265645,0 -78.84376987055963,-2.741618454368495,0 -78.84377725005166,-2.741687183576595,0 -78.84378512816861,-2.741771912217458,0 -78.84375392215186,-2.741846166918294,0 -78.84370884243197,-2.74188960433684,0 -78.84358817844428,-2.741998064481998,0 -78.84354940761698,-2.742035571534239,0 -78.84351685211834,-2.74212270432827,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200008A">
+			<name>Tramo 174 R14 </name>
+			<description>4 DE NOVIEMBRE ENTRE AV. RUMIÑAHUI Y CALLE SAN FRANCISCO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84352883901933,-2.742074134617617,0 -78.84339603266896,-2.742291271306779,0 -78.84334011053595,-2.742369317073613,0 -78.84329049947216,-2.742432612127351,0 -78.84315067297526,-2.742509263801749,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200008B">
+			<name>Tramo 175 R14</name>
+			<description>PISAR CAPAC ENTRE ATAHUALPA Y PACHA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84433227549152,-2.741891485994465,0 -78.8443123378963,-2.74249901451129,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200008C">
+			<name>Tramo 67 R15</name>
+			<description>CALLE 3 DE NOVIEMBRE ENTRE 4 DE NOVIEMBRE Y GUAYAS
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84503897018828,-2.739382476674366,0 -78.8441742573124,-2.739174751114279,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200008D">
+			<name>Tramo 63 R15</name>
+			<description>CALLE 3 DE NOVIEMBRE ENTRE EMILIO ABAD Y BOLIVAR
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84617409784587,-2.739656472052645,0 -78.84572656038038,-2.739560121332489,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200008E">
+			<name>Tramo 70 R15</name>
+			<description>CALLE AV DE LA VIRGEN ENTRE 4 DE NOVIEMBRE Y EMILIO ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84564869543303,-2.739732242024228,0 -78.84553255720836,-2.739840018872994,0 -78.84541826496942,-2.739952484698952,0 -78.84525740797406,-2.740127506795264,0 -78.84505101015408,-2.740341254076794,0 -78.84497763152295,-2.740419425092376,0 -78.8448974474354,-2.740483360847299,0 -78.84483366999503,-2.740526577639431,0 -78.84474562397671,-2.740567376068549,0 -78.8446575174127,-2.740580996488711,0 -78.84451813480958,-2.740617572179418,0 -78.84451260195746,-2.740619698564617,0 -78.84449279626715,-2.740625351864596,0 -78.84430988109172,-2.740665904037892,0 -78.84413606760019,-2.740704841507871,0 -78.84396478759881,-2.740743898401686,0 -78.84380637613144,-2.740781515063713,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200008F">
+			<name>Tramo 71 R15</name>
+			<description>CALLE J.J OLMEDO ENTRE EMILIO ABAD Y TENEMAZA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84523108173428,-2.742636705253439,0 -78.84505968382452,-2.74194012668085,0 -78.8451125445973,-2.741452024678777,0 -78.84510880641388,-2.741206177952256,0 -78.84516781942236,-2.740976750069955,0 -78.84519814802952,-2.740892862318395,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000090">
+			<name>Tramo 72 R15</name>
+			<description>CALLE TENEMAZA ENTRE J.J OLMEDO Y EMILIO ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84584659454916,-2.740823684878932,0 -78.8452288653821,-2.740907700709732,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000091">
+			<name>Tramo 110 R15</name>
+			<description>4 DE NOVIEMBRE ENTRE SUCRE Y 3 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84438778883749,-2.738323854685196,0 -78.84419012101435,-2.739126039107216,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000092">
+			<name>Tramo 169 R15</name>
+			<description>4 DE NOVIEMBRE ENTRE 3 DE NOVIEMBRE Y AV. DE LA VIRGEN
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84414398868182,-2.7392375155725,0 -78.84401953137677,-2.739935893884689,0 -78.84380413104556,-2.740769585356307,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000093">
+			<name>Tramo 170 R15</name>
+			<description>ORIENTE ENTRE AV DEL MAESTRO Y TRES DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84300058020641,-2.738894179655614,0 -78.84295987999839,-2.739087569636439,0 -78.84294014360029,-2.739253825508381,0 -78.84291087099119,-2.739320986957378,0 -78.84285985675882,-2.739473950461608,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000094">
+			<name>Tramo 171 R15</name>
+			<description>ORIENTE ENTRE 3 DE NOVIEMBRE Y AV FRANCISCO CARRASCO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84350972133288,-2.738209406083153,0 -78.84342779438958,-2.738253565612706,0 -78.84334507170529,-2.738327271178327,0 -78.84325390405475,-2.738365627021106,0 -78.84318189862844,-2.738442422267351,0 -78.84312925357567,-2.738518915555434,0 -78.84308189956931,-2.738607264807115,0 -78.84300617676863,-2.738773280184138,0 -78.8429982118143,-2.738855545297339,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000095">
+			<name>Tramo 172 R15</name>
+			<description>ORIENTE ENTRE AV. FRANCISCO CARRASCO Y MIGUEL HEREDIA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84276418464007,-2.739615519498778,0 -78.84271294490749,-2.739647401668959,0 -78.84264699661269,-2.739673241401486,0 -78.84259167530951,-2.739737273016618,0 -78.84256021070183,-2.73982265059449,0 -78.8425566949121,-2.739853617633087,0 -78.84254376702894,-2.739967486302282,0 -78.84253843456463,-2.740056525912002,0 -78.84253068707268,-2.740162960498163,0 -78.84251777350657,-2.740235239686226,0 -78.84248439978417,-2.74030279248165,0 -78.84245789635841,-2.740336851708543,0 -78.84242186535791,-2.740372526855897,0 -78.84239574173544,-2.740398392470843,0 -78.84237044491319,-2.74042171570657,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000096">
+			<name>Tramo 179 R15</name>
+			<description>BOLIVAR ENTRE 10 DE AGOSTO Y 3 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84617959806687,-2.739681716207982,0 -78.84610461377345,-2.740042184203442,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000097">
+			<name>Tramo 78 R16</name>
+			<description>LUIS CORDERO ENTRE GENERAL ENRIQUEZ Y AURELIO JARAMILLO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84757124292028,-2.742436705733376,0 -78.84726381419652,-2.743590347129687,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000098">
+			<name>Tramo 79 R16</name>
+			<description>CALLE LUIS CORDERO ENTRE AURELIO JARAMILLO Y SAMUEL ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84721655623737,-2.743726955672573,0 -78.84693985376825,-2.744762348972354,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA412532000099">
+			<name>Tramo 80 R16</name>
+			<description>CALLE BOLIVAR ENTRE AURELIO JARAMILLO Y SAMUEL ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84667198536975,-2.74353632501103,0 -78.84670344960155,-2.743892627442432,0 -78.84670302244632,-2.744055661669259,0 -78.84670223098368,-2.744271060020055,0 -78.84667950297582,-2.744414623767581,0 -78.84665927860425,-2.744609401190819,0 -78.84665252541353,-2.744686409873816,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200009A">
+			<name>Tramo 92 R16</name>
+			<description>AV 24 DE MAYO ENTRE AURELIO JARAMILLO Y GENERAL ENRIQUEZ
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84830123694471,-2.742567159951913,0 -78.84790808384548,-2.743762826727981,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200009B">
+			<name>Tramo 123 R16</name>
+			<description>AURELIO JARAMILLO ENTRE BOLIVAR Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84665170376896,-2.743395842481764,0 -78.84722368363518,-2.743582373958622,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200009C">
+			<name>Tramo 124 R16</name>
+			<description>AURELIO JARAMILLO ENTRE LUIS CORDERO Y AV. 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84789440184699,-2.743757981410685,0 -78.84727171760204,-2.743582789953605,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200009D">
+			<name>Tramo 128 R16</name>
+			<description>SAMUEL ABAD ENTRE EMILIO ABAD Y BOLIVAR
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84626160375495,-2.744656159529198,0 -78.84663756836389,-2.744711906118634,0 -78.84663197939165,-2.744792295991236,0 -78.84627180086912,-2.744733218697526,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200009E">
+			<name>Tramo 129 R16</name>
+			<description>BOLIVAR ENTRE SAMUEL ABAD Y EMILIO ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84663807614024,-2.744828241451791,0 -78.84659590005258,-2.745517799069089,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA41253200009F">
+			<name>Tramo 130 R16</name>
+			<description>SAMUEL ABAD ENTRE BOLIVAR Y LUIS CORDERO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84668050384084,-2.744722585207258,0 -78.84691686579581,-2.744768345289796,0 -78.84688711199831,-2.744841479251163,0 -78.84668721305479,-2.74480448615493,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A0">
+			<name>Tramo 131 R16</name>
+			<description>SAMUEL ABAD ENTRE LUIS CORDERO Y 24 DE MAYO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84695216957651,-2.744805987267575,0 -78.84753261434244,-2.744925862849093,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A1">
+			<name>Tramo 132 R16</name>
+			<description>24 DE MAYO ENTRE SAMUEL ABAD Y AV. DE LOS ALCALDES
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84758922647586,-2.745046128464379,0 -78.84713926137957,-2.746958818360846,0 -78.84699757743063,-2.747280285524243,0 -78.84692172075988,-2.747351160220056,0 -78.84684422930283,-2.747486561299598,0 -78.84678859783679,-2.747592405839284,0 -78.84677230412863,-2.747701491945434,0 -78.84676489167065,-2.747771304320274,0 -78.8467610480931,-2.747776850954266,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A2">
+			<name>Tramo 134 R16</name>
+			<description>SAMUEL ABAD ENTRE AV 24 DE MAYO Y AUGUSTO SACOTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84772650846615,-2.745012480007048,0 -78.84808676949046,-2.74505643963314,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A3">
+			<name>Tramo 135 R16</name>
+			<description>AUGUSTO SACOTO ENTRE SAMUEL ABAD Y S/N
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84810076143253,-2.745085555303931,0 -78.84807570575607,-2.745294050590922,0 -78.84802278850776,-2.745506850693761,0 -78.84793666804121,-2.745783865093688,0 -78.84785448684126,-2.745997730003077,0 -78.84778563448033,-2.746189362188476,0 -78.84771038099797,-2.746421643367926,0 -78.84767762806369,-2.746578962991153,0 -78.84763835618662,-2.746686681677284,0 -78.84756438013227,-2.746897737539837,0 -78.84753527354474,-2.747046382342564,0 -78.84746748446473,-2.747247150791472,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A4">
+			<name>Tramo 136 R16</name>
+			<description>AV 24 DE MAYO ENTRE AURELIO JARAMILLO Y SAMUEL ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84789414216809,-2.743885154229571,0 -78.84766408981281,-2.744885022816326,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A5">
+			<name>Tramo 137 R16</name>
+			<description>AUGUSTO SACOTO ENTRE AURELIO JARAMILLO Y SAMUEL ABAD
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84830046197513,-2.743919443967092,0 -78.84812178480531,-2.744981111407113,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A6">
+			<name>Tramo 176 R16</name>
+			<description>BOLIVAR ENTRE AURELIO JARAMILLO Y GRAL ENRIQUEZ
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84635979960248,-2.742243574182147,0 -78.84663417560787,-2.743384833408918,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A7">
+			<name>Tramo 201 R16</name>
+			<description>AV. 24 DE MAYO ENTRE AV DE LOS ALCALDES Y AV. HOMERO CASTANIER CRESPO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84674743744826,-2.747903481307488,0 -78.84666244099307,-2.748230731146915,0 -78.84659837525534,-2.748382461609829,0 -78.84648960766106,-2.748635692866372,0 -78.84613561642804,-2.749432405249932,0 -78.84586930497825,-2.750075606465398,0 -78.84573878580629,-2.750372448931005,0 -78.84556439810126,-2.750794014964741,0 -78.84552999533946,-2.750856401900882,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A8">
+			<name>Tramo 202 R16</name>
+			<description>AV. 24 DE MAYO ENTRE AV. HOMERO CASTANIER CRESPO Y AV.ERNESTO CHE GUEVARA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84601521588976,-2.753166650475165,0 -78.84586122075069,-2.753171614787443,0 -78.84571016116631,-2.753083167433319,0 -78.84564234280521,-2.752823539613334,0 -78.84534059255756,-2.751721278067444,0 -78.84532908866281,-2.751574184589634,0 -78.84534346401441,-2.751463007543074,0 -78.84539655939523,-2.751211432959554,0 -78.84535926571594,-2.751023714437844,0 -78.84535843681643,-2.750833418466796,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000A9">
+			<name>Tramo 81 R17</name>
+			<description>CALLE GENERAL ENRIQUEZ ENTRE 24 DE MAYO Y CAMILO PONCE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84841765626609,-2.742554911940239,0 -78.84892836730171,-2.74266877338427,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000AA">
+			<name>Tramo 85 R17</name>
+			<description>CALLE CAMILO PONCE DESDE LA 10 DE AGOSTO HASTA LA TRES DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84950907882518,-2.740522806152637,0 -78.84936621124049,-2.741099295344886,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000AB">
+			<name>Tramo 86 R17</name>
+			<description>CALLE TRES DE NOVIEMBRE ENTRE 24 DE MAYO Y CAMILO PONCE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84914154142207,-2.7403876340305,0 -78.84949444019996,-2.740495836513695,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000AC">
+			<name>Tramo 88 R17</name>
+			<description>CALLE CAMILO PONCE ENTRE TRES DE NOVIEMBRE Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84969654637078,-2.739879211728205,0 -78.84952203627405,-2.740474863865176,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000AD">
+			<name>Tamo 89 R17</name>
+			<description>CALLE SUCRE ENTRE 24 DE MAYO Y CAMILO PONCE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84939347534096,-2.739681152250125,0 -78.84970970115484,-2.73977689172382,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000AE">
+			<name>Tramo 138 R17</name>
+			<description>AUGUSTO SACOTO ENTRE GENERAL ENRIQUEZ Y AURELIO JARAMILLO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84855514123682,-2.742620174078126,0 -78.84830335595825,-2.743888692087304,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000AF">
+			<name>Tramo 146 R17</name>
+			<description>10 DE AGOSTO ENTRE 24 DE MAYO Y CAMILO PONCE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84892067494037,-2.740949855921729,0 -78.84912495525931,-2.741017678762794,0 -78.84924291088099,-2.741057238967164,0 -78.84935671652701,-2.741101555157176,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B0">
+			<name>Tramo 82 R18</name>
+			<description>CALLE GENERAL ENRIQUEZ ENTRE LA CAMILO PONCE E LA IGNACIO NEIRA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84894023464695,-2.742685434469613,0 -78.84974369894611,-2.742796628863631,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B1">
+			<name>Tramo 83 R18</name>
+			<description>CALLE IGNACIO NEIRA DESDE LA GENERAL ENRIQUEZ HASTA LA 10 DE AGOSTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.85035165064237,-2.741483394539904,0 -78.84975032829114,-2.742786819793664,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B2">
+			<name>Tramo 87 R18</name>
+			<description>CALLE TRES DE NOVIEMBRE ENTRE CAMILO PONCE Y AV. IGNACIO NEIRA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84953267086433,-2.740507758337744,0 -78.84991572870577,-2.740614592882484,0 -78.85031445659935,-2.740709428501451,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B3">
+			<name>Tramo 90 R18</name>
+			<description>CALLE SUCRE ENTRE CAMILO PONCE Y AV. IGNACIO NEIRA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84972393665598,-2.739782100338599,0 -78.85018499634113,-2.739912311553818,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B4">
+			<name>Tramo 91 R18</name>
+			<description>AV. IGNACIO NEIRA ENTRE TRES DE NOVIEMBRE Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.85020123105045,-2.739915802920701,0 -78.85026911574948,-2.740317049649308,0 -78.85030401121359,-2.740519067662208,0 -78.85031708362348,-2.740684071129959,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B5">
+			<name>Tramo 139 R18</name>
+			<description>AURELIO JARAMILLO ENTRE AUGUSTO SACOTO E IGNACIO NEIRA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84831252648539,-2.74394330270472,0 -78.849245037073,-2.744209139418203,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B6">
+			<name>Tramo 140 R18</name>
+			<description>AV IGNACIO NEIRA ENTRE AURELIO JARAMILLO Y S/N
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84926721555821,-2.744181556891666,0 -78.84955485838108,-2.743423112293613,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B7">
+			<name>Tramo 141 R18</name>
+			<description>AV IGNACIO NEIRA ENTRE S/N Y AV DE LOS ALCALDES
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84951350680356,-2.743415069593517,0 -78.84954169316782,-2.743517116076578,0 -78.84945413981559,-2.743767481288642,0 -78.84923873901099,-2.744302190322973,0 -78.84912274229833,-2.744791692130279,0 -78.8490673316869,-2.74521532052203,0 -78.84899467286478,-2.745541303650969,0 -78.84893720982124,-2.745876781545042,0 -78.84885305233628,-2.746405510576362,0 -78.84878295036798,-2.746677234089527,0 -78.84874045755213,-2.746803597147201,0 -78.84867793774518,-2.746921066300374,0 -78.84849985188336,-2.747147892405875,0 -78.84829015953702,-2.747336025015985,0 -78.8481179796636,-2.747511724090667,0 -78.84781624500314,-2.747805289451322,0 -78.84775355790008,-2.747849690320922,0 -78.84774232408004,-2.747851072176704,0 -78.84740270819997,-2.747779602558117,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B8">
+			<name>Tramo 142 R18</name>
+			<description>AURELIO JARAMILLO ENTRE AV IGNACIO NEIRA Y MARGINAL AL RIO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84929003842417,-2.744216378582242,0 -78.85020497139745,-2.744473563140562,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000B9">
+			<name>Tramo 143 R18</name>
+			<description>AV. IGNACIO NEIRA ENTRE GENERAL ENRIQUEZ Y AURELIO JARAMILLO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84970558766696,-2.742877142869812,0 -78.84926262595907,-2.744165641267442,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000BA">
+			<name>Tramo 144 R18</name>
+			<description>GENERAL ENRIQUEZ ENTRE AV. IGNACIO NEIRA Y AV. ANDRES F CORDOVA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8497207587501,-2.74282614442633,0 -78.85084414592286,-2.743055294392363,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000BB">
+			<name>Tramo 145 R18</name>
+			<description>10 DE AGOSTO ENTRE CAMILO PONCE E IGNACIO NEIRA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.84937077264981,-2.741106947281273,0 -78.85034756401706,-2.741473746699178,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000BC">
+			<name>Tramo 147 R18</name>
+			<description>AV. IGNACIO NEIRA ENTRE 3 DE NOVIEMBRE Y 10 DE AGOSTO
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.85032469327821,-2.740720075025437,0 -78.8503599207538,-2.741063620085168,0 -78.85037574093043,-2.741234123828398,0 -78.85038126853783,-2.741274747795966,0 -78.85038000262723,-2.741317544539785,0 -78.85037959679319,-2.741374656798775,0 -78.85037384768977,-2.741433067575531,0 -78.85035838446828,-2.741467854593867,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000BD">
+			<name>Tramo 148 R18</name>
+			<description>AV. IGNACIO NEIRA ENTRE SUCRE Y 3 DE NOVIEMBRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.85019358732693,-2.73992341157131,0 -78.85026290089429,-2.740314323347028,0 -78.85030041262489,-2.740493674915048,0 -78.85031871670428,-2.740675201222851,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000BE">
+			<name>Tramo 149 R18</name>
+			<description>AV. IGNACIO NEIRA ENTRE ESCALINATAS Y SUCRE
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.85004365927378,-2.73802863100216,0 -78.85006243649323,-2.738376842833608,0 -78.85003705766087,-2.738714770332217,0 -78.85005001005936,-2.738978111373553,0 -78.8500915206738,-2.739248049150186,0 -78.85014608945103,-2.73955538789731,0 -78.85018913314113,-2.739876854789377,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125320000BF">
+			<name>Tramo 150 R18</name>
+			<description>AZUAY ENTRE ESCALINATAS Y S/N
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.8497263326949,-2.737360912402583,0 -78.84984510790734,-2.737404315536935,0 -78.84988015366068,-2.737467894008593,0 -78.84989640944394,-2.737571477270088,0 -78.84992444947547,-2.737614652132244,0 -78.84993852038673,-2.737683056360778,0 -78.85002638839759,-2.737945231015696,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark id="5EDA4125330000C0">
+			<name>Tramo 233 R18</name>
+			<description>AV HERMANO MIGUEL ENTRE CALLE S/N Y AV ERNESTO CHE GUEVARA
+</description>
+			<styleUrl>#__managed_style_09BDB164CC41FCCDC603</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-78.85047402249826,-2.736997793833108,0 -78.85050055426677,-2.737484240599777,0 -78.85048006100034,-2.737834553004704,0 -78.85057669084988,-2.737960901636745,0 -78.85064873888135,-2.738131705609814,0 -78.85069209289264,-2.73837012961736,0 -78.85084973298301,-2.739149506557427,0 -78.85101276252101,-2.739807132380248,0 -78.85102336389886,-2.739788698015297,0 -78.85110717549792,-2.740311402838748,0 -78.85105898913892,-2.741164704568225,0 -78.85097354859795,-2.742321400725137,0 -78.85097447165433,-2.742673981648446,0 -78.85092410901102,-2.742979402568904,0 -78.85037734816623,-2.744248061511531,0 -78.85026835991239,-2.744510262481199,0 -78.85007353203642,-2.744964125661158,0 -78.84988497334996,-2.745635793340075,0 -78.84973099570605,-2.74638681618605,0 -78.8494871756369,-2.747632540427898,0 -78.84948819528225,-2.748021028884022,0 -78.84950746468776,-2.74843535497802,0 -78.84951804569982,-2.748609473471444,0 -78.84946248745887,-2.748982943920895,0 -78.84942176542178,-2.749373895841913,0 -78.84934620905885,-2.7497736361887,0 -78.84925237042214,-2.749970106317642,0 -78.84912513117496,-2.75009135125691,0 -78.84892346886581,-2.750284350868546,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
