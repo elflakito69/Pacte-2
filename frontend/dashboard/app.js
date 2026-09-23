@@ -709,14 +709,14 @@ function renderRecentActivity(items) {
     return;
   }
 
-  list.innerHTML = items.map(item => {
+    list.innerHTML = items.map(item => {
     let iconHtml = '<span class="bullet"></span>';
     let gpsBadge = '';
 
     if (item.type === 'login') {
-      iconHtml = '<i class="fa fa-sign-in" style="color: #0057a8; font-size: 15px; margin-top: 2px; flex-shrink: 0;" title="Inicio de sesión"></i>';
+      iconHtml = '<i class="fa fa-sign-in" style="color: #0057a8; font-size: 15px; margin-top: 2px; flex-shrink: 0;" title="Inicio de sesin"></i>';
       if (item.has_coords || (item.latitude !== null && item.latitude !== undefined && item.latitude !== '')) {
-        gpsBadge = ' <span style="display:inline-flex; align-items:center; gap:2px; font-size:11px; font-weight:600; color:#0a7c4e; background:rgba(10,124,78,0.1); padding:1px 6px; border-radius:4px; margin-left:6px;">📍 GPS</span>';
+        gpsBadge = ' <span style="display:inline-flex; align-items:center; gap:2px; font-size:11px; font-weight:600; color:#0a7c4e; background:rgba(10,124,78,0.1); padding:1px 6px; border-radius:4px; margin-left:6px;"> GPS</span>';
       } else {
         gpsBadge = ' <span style="font-size:11px; color:#8fa3c0; margin-left:6px;">(Sin GPS)</span>';
       }
@@ -728,157 +728,20 @@ function renderRecentActivity(items) {
       iconHtml = '<span class="bullet" style="background:#e74c3c;"></span>';
     }
 
+    let clickAction = '';
+    if (item.has_coords && item.latitude && item.longitude) {
+      clickAction = `onclick="window.centerMapOn(${item.latitude}, ${item.longitude})" style="cursor:pointer;" title="Ver en mapa"`;
+    }
+
+    let timeText = item.time_ago || 'hace un momento';
+
     return `
       <li ${clickAction}>
         ${iconHtml}
         <div>
           <div class="activity-title">${item.description || 'Evento del sistema'}${gpsBadge}</div>
-          <div class="activity-sub">${item.user_name || 'Sistema'} · ${(() => { if (!item.timestamp) return 'hace un momento'; const diff = Math.floor((new Date() - new Date(item.timestamp.replace('Z','')+ 'Z')) / 1000); if (diff < 60) return diff + ' seg'; if (diff < 3600) return Math.floor(diff/60) + ' min'; if (diff < 86400) return Math.floor(diff/3600) + ' hrs'; return Math.floor(diff/86400) + ' das'; })()}</div>
+          <div class="activity-sub">${item.user_name || 'Sistema'}  ${timeText}</div>
         </div>
-      </li>
-    `;
-  }).join('');
-}
-
-function updateDashboardLiveIndicator(sectionId = '') {
-  const indicator = document.getElementById('dashboard-live-indicator');
-  if (!indicator) return;
-  indicator.style.display = sectionId === 'dashboard' ? 'inline-block' : 'none';
-}
-
-// ============= MONITOREO =============
-
-async function loadMonitoring() {
-  try {
-    await ensureRoutesLoaded();
-
-    const usersResponse = await fetch(`${API_URL}/users?per_page=100`, {
-      headers: { 'Authorization': `Bearer ${authToken}` }
-    });
-    if (!usersResponse.ok) throw new Error('No autorizado');
-
-    const usersData = await usersResponse.json();
-    const controllers = (usersData.users || []).filter(user => user.role === 'user');
-
-    const monitoringRecords = await Promise.all(
-      controllers.map(async (controller) => {
-        try {
-          const response = await fetch(`${API_URL}/monitoring?user_id=${controller.id}`, {
-            headers: { 'Authorization': `Bearer ${authToken}` }
-          });
-
-          if (!response.ok) {
-            return { controller, monitoring: null };
-          }
-
-          const data = await response.json();
-          const latest = Array.isArray(data.monitoring) && data.monitoring.length > 0 ? data.monitoring[0] : null;
-          return { controller, monitoring: latest };
-        } catch (_) {
-          return { controller, monitoring: null };
-        }
-      })
-    );
-
-    monitoringControllersSnapshot = monitoringRecords.map(item => {
-      const route = (window.routes || []).find(r => Number(r.id) === Number(item.controller.current_route_id));
-      const status = item.monitoring ? item.monitoring.status : 'no_data';
-
-      return {
-        user_id: item.controller.id,
-        user_name: item.controller.full_name || item.controller.username,
-        route_name: route ? route.name : 'Sin ruta asignada',
-        route_id: route ? route.id : null,
-        status
-      };
-    });
-
-    populateMonitoringFilters();
-    applyMonitoringFilters();
-      renderMonitoringAlertBanner(monitoringControllersSnapshot);
-  } catch (error) {
-    console.error('Error cargando monitoreo:', error);
-  }
-}
-
-function populateMonitoringFilters() {
-  const zoneSelect = document.getElementById('filter-zone');
-  const stateSelect = document.getElementById('filter-state');
-  if (!zoneSelect || !stateSelect) return;
-
-  const currentZoneValue = zoneSelect.value;
-  zoneSelect.innerHTML = '<option value="">Todas las zonas</option>' +
-    (window.routes || []).map(route => `<option value="${route.id}">${route.name}</option>`).join('');
-  zoneSelect.value = currentZoneValue;
-
-  if (!zoneSelect.dataset.boundChange) {
-    zoneSelect.addEventListener('change', applyMonitoringFilters);
-    zoneSelect.dataset.boundChange = 'true';
-  }
-
-  if (!stateSelect.dataset.boundChange) {
-    stateSelect.addEventListener('change', applyMonitoringFilters);
-    stateSelect.dataset.boundChange = 'true';
-  }
-}
-
-function applyMonitoringFilters() {
-  const zoneValue = (document.getElementById('filter-zone') ? document.getElementById('filter-zone').value : null) || '';
-  const stateValue = (document.getElementById('filter-state') ? document.getElementById('filter-state').value : null) || '';
-
-  const filtered = monitoringControllersSnapshot.filter(item => {
-    const matchesZone = !zoneValue || Number(item.route_id) === Number(zoneValue);
-    const matchesState = !stateValue || item.status === stateValue;
-    return matchesZone && matchesState;
-  });
-
-  renderMonitoringList(filtered);
-    renderMonitoringAlertBanner(monitoringControllersSnapshot);
-}
-
-function renderMonitoringList(monitoring) {
-  const listContainer = document.querySelector('.controller-list');
-  if (!listContainer) return;
-
-  if (!monitoring.length) {
-    listContainer.innerHTML = '<li><div><div class="controller-name">Sin resultados</div><div class="controller-zone">No hay controladores para el filtro actual</div></div><span class="badge"> Sin datos</span></li>';
-    return;
-  }
-
-  listContainer.innerHTML = monitoring.map(m => {
-    const clickAction = `onclick="openMonitoringHistory(${m.user_id}, '${m.user_name}')" style="cursor:pointer; transition: background 0.2s;" onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background='transparent'"`;
-    
-    let statusLabel = ' Sin datos';
-    let statusClass = 'info';
-    
-    const isSinRuta = !m.route_id || String(m.route_id) === 'null' || String(m.route_id) === '0' || String(m.route_name).toLowerCase().includes('sin ruta');
-
-    if (m.status === 'off_zone') {
-      statusLabel = ' Fuera de Zona';
-      statusClass = 'danger';
-    } else if (m.status === 'active') {
-      if (isSinRuta) {
-        statusLabel = ' Sin ruta';
-        statusClass = 'info';
-      } else {
-        statusLabel = ' En Ruta';
-        statusClass = 'success';
-      }
-    } else {
-      // no_data
-      if (isSinRuta) {
-        statusLabel = ' Sin datos';
-        statusClass = 'info';
-      }
-    }
-
-    return `
-      <li ${clickAction}>
-        <div>
-          <div class="controller-name">${m.user_name}</div>
-          <div class="controller-zone">${m.route_name}</div>
-        </div>
-        <span class="badge badge-${statusClass}">${statusLabel}</span>
       </li>
     `;
   }).join('');
