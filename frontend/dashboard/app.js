@@ -3016,13 +3016,17 @@ async function loadMyRoute() {
     // === BANNER DE TRAMOS DE APOYO ===
     const tramosContainer = document.getElementById('ctrl-tramos-banner');
     if (data.assigned_tramos && Array.isArray(data.assigned_tramos) && data.assigned_tramos.length > 0 && window.TRAMOS_CATALOG) {
-      const nombresTramos = data.assigned_tramos.map(id => {
+            const nombresTramos = data.assigned_tramos.map(id => {
         const t = window.TRAMOS_CATALOG.find(x => Number(x.id) === Number(id));
-        return t ? t.name : 'Tramo ' + id;
+        return t ? `Tramo ${t.id} R${t.route_id}` : `Tramo ${id}`;
       });
       const bannerHTML = '<div id="ctrl-tramos-banner" style="background:rgba(245,158,11,0.15);border:1px solid #f59e0b;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12px;color:#fbbf24;">' +
-        '<div style="font-weight:600;margin-bottom:4px;">\u{1F4CC} ZONAS DE APOYO ASIGNADAS</div>' +
-        '<div style="color:rgba(255,255,255,0.8);line-height:1.4;">' + nombresTramos.join(', ') + '</div>' +
+        '<div style="font-weight:600;margin-bottom:4px;display:flex;align-items:center;gap:6px;">' +
+          '<i class="fa fa-map-marker"></i> TRAMOS DE APOYO ASIGNADOS' +
+        '</div>' +
+        '<div style="color:rgba(255,255,255,0.9);line-height:1.4;font-size:13px;font-weight:500;">' + 
+          nombresTramos.join(', ') + 
+        '</div>' +
         '</div>';
       
       if (tramosContainer) {
