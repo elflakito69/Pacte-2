@@ -728,19 +728,12 @@ function renderRecentActivity(items) {
       iconHtml = '<span class="bullet" style="background:#e74c3c;"></span>';
     }
 
-    let clickAction = '';
-    if (item.has_coords && item.latitude && item.longitude) {
-      clickAction = `onclick="window.centerMapOn(${item.latitude}, ${item.longitude})" style="cursor:pointer;" title="Ver en mapa"`;
-    }
-
-    let timeText = item.time_ago || 'hace un momento';
-
     return `
       <li ${clickAction}>
         ${iconHtml}
         <div>
           <div class="activity-title">${item.description || 'Evento del sistema'}${gpsBadge}</div>
-          <div class="activity-sub">${item.user_name || 'Sistema'} · ${timeText}</div>
+          <div class="activity-sub">${item.user_name || 'Sistema'} · ${(() => { if (!item.timestamp) return 'hace un momento'; const diff = Math.floor((new Date() - new Date(item.timestamp.replace('Z','')+ 'Z')) / 1000); if (diff < 60) return diff + ' seg'; if (diff < 3600) return Math.floor(diff/60) + ' min'; if (diff < 86400) return Math.floor(diff/3600) + ' hrs'; return Math.floor(diff/86400) + ' das'; })()}</div>
         </div>
       </li>
     `;
@@ -1725,8 +1718,8 @@ function renderTicketsTable(tickets) {
                 ${translateStatus(ticket.status)}
               </button>
               <div class="ticket-status-dropdown" id="ticket-status-dropdown-${ticket.id}" style="display:none;">
-                <button type="button" onclick="changeTicketStatus(${ticket.id}, 'pending')">Pendiente</button>
-                <button type="button" onclick="changeTicketStatus(${ticket.id}, 'paid')">Pagado</button>
+                <button type="button" onclick="changeTicketStatus(${ticket.id}, 'pending')">En revisión</button>
+                <button type="button" onclick="changeTicketStatus(${ticket.id}, 'paid')">Revisado</button>
                 <button type="button" onclick="changeTicketStatus(${ticket.id}, 'disputed')">En disputa</button>
               </div>
             ` : `<span class="badge badge-${ticket.status === 'pending' ? 'warning' : ticket.status === 'paid' ? 'success' : 'info'}">${translateStatus(ticket.status)}</span>`}
@@ -1734,10 +1727,11 @@ function renderTicketsTable(tickets) {
       </td>
       <td class="actions-cell" data-label="Acciones">
         <button class="btn-icon" onclick='viewTicketDetail(${JSON.stringify(ticket)})' title="Ver detalles">&#x1F4CB;</button>
-        ${ticket.photo_path ? `<button class="btn-icon" onclick="downloadTicketFile(${ticket.id})" title="Abrir evidencia">&#x1F4CE;</button>` : ''}
+        <!-- ${ticket.photo_path ? `<button class="btn-icon" onclick="downloadTicketFile(${ticket.id})" title="Abrir evidencia">&#x1F4CE;</button>` : ''} -->
         ${canManageTickets ? `
-        <button class="btn-icon" onclick="openEditTicketModal(${ticket.id})">&#x270F;&#xFE0F;</button>
-        <button class="btn-icon" onclick="deleteTicket(${ticket.id})">&#x1F5D1;&#xFE0F;</button>
+        <!-- <button class="btn-icon" onclick="openEditTicketModal(${ticket.id})">&#x270F;&#xFE0F;</button> -->
+        <!-- <button class="btn-icon" onclick="deleteTicket(${ticket.id})">&#x1F5D1;&#xFE0F;</button> -->
+        ${ticket.status === 'pending' ? `<button class="btn-icon" onclick="changeTicketStatus(${ticket.id}, 'paid')" title="Aprobar (Marcar como Revisado)" style="color: green; font-weight: bold; font-size: 16px;">&#x2714;&#xFE0F;</button>` : ''}
         ` : ''}
       </td>
     </tr>
