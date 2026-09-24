@@ -1298,10 +1298,11 @@ def get_tickets_by_zone():
         db.session.query(
             Route.id.label('route_id'),
             Route.name.label('route_name'),
+            Ticket.address.label('tramo'),
             func.count(Ticket.id).label('count')
         )
         .join(Ticket, Ticket.route_id == Route.id)
-        .group_by(Route.id, Route.name)
+        .group_by(Route.id, Route.name, Ticket.address)
         .order_by(func.count(Ticket.id).desc(), Route.name.asc())
         .all()
     )
@@ -1311,6 +1312,7 @@ def get_tickets_by_zone():
             {
                 'route_id': row.route_id,
                 'route_name': row.route_name,
+                'tramo': row.tramo if row.tramo else 'Sin tramo',
                 'count': int(row.count)
             }
             for row in rows
