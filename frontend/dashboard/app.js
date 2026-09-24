@@ -313,7 +313,7 @@ function bindMobileTicketForm() {
   }
 }
 
-function startControllerGPSTracking() {
+function startControllerGPSTracking() {\n  if (!window._pausePollInterval) window._pausePollInterval = setInterval(pollActivePause, 3000);\n  pollActivePause();
   if (!currentUser || currentUser.role !== 'user') return;
   if (!currentUser.current_route_id) return;
   if (!navigator.geolocation) return;
@@ -2199,25 +2199,12 @@ async function handleMobilePauseSubmit(event) {
     }
     
     showToast('Pausa solicitada exitosamente', 'success');
-    const statusDiv = document.getElementById('active-pause-status');
-    if (statusDiv) {
-      statusDiv.style.display = 'block';
-      statusDiv.style.backgroundColor = 'var(--warning-bg)';
-      statusDiv.style.color = 'var(--warning)';
-      statusDiv.textContent = 'Estado: Pendiente de aprobación · Retorno en 10 minutos';
+    
+    if (!window._pausePollInterval) {
+      window._pausePollInterval = setInterval(pollActivePause, 3000);
     }
-    if (activePauseTimeoutId) window.clearTimeout(activePauseTimeoutId);
-    activePauseTimeoutId = window.setTimeout(() => {
-      const activeStatus = document.getElementById('active-pause-status');
-      if (activeStatus) {
-        activeStatus.textContent = 'Pausa finalizada. Retornando al trabajo.';
-        activeStatus.style.backgroundColor = 'var(--success-bg)';
-        activeStatus.style.color = 'var(--success)';
-      }
-      form.reset();
-      startControllerMonitoring();
-      activePauseTimeoutId = null;
-    }, 600000);
+    pollActivePause();
+    
   } catch (e) {
     showToast(e.message, 'error');
   } finally {
@@ -2225,6 +2212,89 @@ async function handleMobilePauseSubmit(event) {
     submitBtn.textContent = originalText;
   }
 }
+
+// Global pause state
+window.currentActivePause = null;
+
+async function pollActivePause() {
+  if (!currentUser || currentUser.role !== 'user') return;
+  try {
+    const resp = await fetch(`${API_URL}/pauses/my_active`, {
+      headers: { 'Authorization': `Bearer ${authToken}` }
+    });
+    if (!resp.ok) return;
+    const pause = await resp.json();
+    
+    const statusDiv = document.getElementById('active-pause-status');
+    const form = document.getElementById('mobile-pause-form');
+    if (!statusDiv) return;
+
+    if (!pause) {
+      // No active pause
+      window.currentActivePause = null;
+      statusDiv.style.display = 'none';
+      if (form) {
+        form.querySelector('button[type="submit"]').disabled = false;
+      }
+      return;
+    }
+    
+    window.currentActivePause = pause;
+    statusDiv.style.display = 'block';
+    if (form) {
+      form.querySelector('button[type="submit"]').disabled = true;
+    }
+
+    if (pause.status === 'pending') {
+      statusDiv.style.backgroundColor = 'var(--warning-bg)';
+      statusDiv.style.color = 'var(--warning)';
+      statusDiv.textContent = 'Estado: Pendiente de aprobación. Espere por favor...';
+    } else if (pause.status === 'rejected') {
+      statusDiv.style.backgroundColor = '#fee2e2';
+      statusDiv.style.color = '#dc2626';
+      statusDiv.innerHTML = `<strong>Su pausa ha sido rechazada.</strong><br>Continúe con su ruta.`;
+      
+      // Auto-hide after 5s and finish it logically
+      if (!window._rejectHideTimeout) {
+        window._rejectHideTimeout = setTimeout(() => {
+          window.currentActivePause = null;
+          statusDiv.style.display = 'none';
+          if (form) form.querySelector('button[type="submit"]').disabled = false;
+        }, 6000);
+      }
+    } else if (pause.status === 'authorized') {
+      // Show countdown!
+      const start = new Date(pause.start_time).getTime();
+      const end = start + (pause.duration_minutes * 60000);
+      const now = new Date().getTime();
+      const left = end - now;
+      
+      if (left <= 0) {
+        // TIME IS UP!
+        statusDiv.style.backgroundColor = '#fee2e2';
+        statusDiv.style.color = '#dc2626';
+        statusDiv.innerHTML = `<strong>¡Tiempo de pausa culminada!</strong><br>Regrese a ruta inmediatamente.`;
+        
+        // Only alert once when it transitions to 0
+        if (!window._alertedPauseUp) {
+          alert('¡Tiempo de pausa culminada! Regrese a ruta.');
+          window._alertedPauseUp = true;
+          // You could optionally POST to backend to set status = 'finished' automatically
+        }
+      } else {
+        window._alertedPauseUp = false; // reset alert flag
+        const mins = Math.floor(left / 60000);
+        const secs = Math.floor((left % 60000) / 1000);
+        statusDiv.style.backgroundColor = 'var(--success-bg)';
+        statusDiv.style.color = 'var(--success)';
+        statusDiv.innerHTML = `<strong>Pausa Activa (Aprobada)</strong><br>Tiempo restante: ${mins}m ${secs}s`;
+      }
+    }
+  } catch (e) {
+    console.warn("Poll active pause error", e);
+  }
+}
+
 
 async function loadPauses() {
   const tableContainer = document.getElementById('pauses-table-container');
@@ -3112,143 +3182,52 @@ async function _initCtrlRouteMap(route, route2, data) {
     let bounds = null;
 
     // 1. CARGAR RUTAS COMPLETAS
-    if (!window.routeGeoJSON) {
-      const geojsonResp = await fetch('/frontend/assets/semertaz_routes.geojson');
-      if (geojsonResp.ok) window.routeGeoJSON = await geojsonResp.json();
-    }
-    
-    if (window.routeGeoJSON) {
-      window.ctrlRoutesLayer = L.geoJSON(window.routeGeoJSON, {
-        style: f => {
-          const fId = String(f.properties.id || f.properties.ruta || '');
-          let isMine = (fId === assignedId1);
-          const originalColor = f.properties.stroke || '#00f2fe';
-          return {
-            color: isMine ? originalColor : '#000',
-            weight: isMine ? 6 : 0,
-            opacity: isMine ? 1 : 0,
-            className: isMine ? 'ctrl-assigned-route-glow' : '',
-            dashArray: isMine ? '10, 10' : null,
-            lineCap: 'round', lineJoin: 'round'
-          };
-        },
-        onEachFeature: (f, layer) => {
-          const fId = String(f.properties.id || f.properties.ruta || '');
-          if (fId === assignedId1) {
-            try {
-              const featureBounds = layer.getBounds();
-              bounds = bounds ? bounds.extend(featureBounds) : featureBounds;
-            } catch (e) {}
-          }
-        }
-      }).addTo(ctrlRouteMap);
-    }
-
-    // 2. CARGAR TRAMOS DE APOYO
-    if (!window.tramosGeoJSON) {
-      const tramosResp = await fetch('/frontend/assets/semertaz_tramos.geojson');
-      if (tramosResp.ok) window.tramosGeoJSON = await tramosResp.json();
-    }
-
-    if (window.tramosGeoJSON && data.assigned_tramos && data.assigned_tramos.length > 0) {
-      const assignedTramosStr = data.assigned_tramos.map(String);
-      
-      window.ctrlTramosLayer = L.geoJSON(window.tramosGeoJSON, {
-        style: f => {
-          const tId = String(f.properties.id || '');
-          const isMine = assignedTramosStr.includes(tId);
-          const originalColor = f.properties.stroke || '#FFA000';
-          return {
-            color: isMine ? originalColor : '#000',
-            weight: isMine ? 6 : 0,
-            opacity: isMine ? 1 : 0,
-            className: isMine ? 'ctrl-assigned-route-glow' : '',
-            dashArray: isMine ? '10, 10' : null,
-            lineCap: 'round', lineJoin: 'round'
-          };
-        },
-        onEachFeature: (f, layer) => {
-          const tId = String(f.properties.id || '');
-          if (assignedTramosStr.includes(tId)) {
-            try {
-              const featureBounds = layer.getBounds();
-              bounds = bounds ? bounds.extend(featureBounds) : featureBounds;
-            } catch (e) {}
-            
-            layer.bindTooltip(f.properties.description || f.properties.name || 'Tramo' , {
-              permanent: false,
-              direction: 'center'
-            });
-          }
-        }
-      }).addTo(ctrlRouteMap);
-    }
-
-    
-        // Toggle logic removed. Both layers remain visible.
-
-    if (bounds && bounds.isValid()) {
-      ctrlRouteMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 17 });
-    }
-  } catch (e) {
-    console.warn('[CTRL MAP] GeoJSON error:', e);
-  }
-}
-
-function _startCtrlGpsWatch(route, route2, dotEl, badgeEl, assignedTramos = []) {
-  if (!navigator.geolocation) {
-    _ctrlGpsStatus('GPS no disponible en este dispositivo.', '#dc2626');
-    return;
-  }
-
-  const myIcon = L.divIcon({
-    className: '',
-    html: `<div style="width:20px;height:20px;border-radius:50%;background:#1a85d4;border:3px solid #fff;box-shadow:0 0 0 5px rgba(26,133,212,0.35);"></div>`,
-    iconSize: [20, 20], iconAnchor: [10, 10]
-  });
-
-  ctrlGpsWatchId = navigator.geolocation.watchPosition(
-    async pos => {
-      const { latitude: lat, longitude: lng, accuracy } = pos.coords;
-      if (ctrlRouteMap) {
-        if (!ctrlPlayerMarker) {
-          ctrlPlayerMarker = L.marker([lat, lng], { icon: myIcon, zIndexOffset: 1000 })
-            .bindPopup(`<b>Tu posición</b><br>±${Math.round(accuracy)}m`)
-            .addTo(ctrlRouteMap);
-        } else {
-          ctrlPlayerMarker.setLatLng([lat, lng]);
-        }
-        ctrlRouteMap.panTo([lat, lng], { animate: true });
-      }
-      let inZone = null;
-      if (window.turf) {
-        const assignedId1 = 'R' + route.id;
-        const assignedId2 = route2 ? 'R' + route2.id : null;
-        try {
-          if (!window.routeGeoJSON) {
+              if (!window.routeGeoJSON) {
             const geojsonResp = await fetch('/frontend/assets/semertaz_routes.geojson');
             if (geojsonResp.ok) {
               window.routeGeoJSON = await geojsonResp.json();
             }
           }
-          if (window.routeGeoJSON) {
-            const gj = window.routeGeoJSON;
+          if (window.routeGeoJSON || window.tramosGeoJSON) {
             const point = turf.point([lng, lat]);
-            const features = gj.features.filter(f => {
-              const featureId = String(f.properties.id || f.properties.ruta || '');
-              return featureId === assignedId1 || featureId === assignedId2;
-            });
-            if (features.length > 0) {
-              inZone = features.some(f => {
+            let features = [];
+            
+            if (window.routeGeoJSON) {
+              features = window.routeGeoJSON.features.filter(f => {
+                const featureId = String(f.properties.id || f.properties.ruta || '');
+                return featureId === assignedId1 || featureId === assignedId2;
+              });
+            }
+
+            let tramoFeatures = [];
+            if (window.tramosGeoJSON && assignedTramos && assignedTramos.length > 0) {
+              const strTramos = assignedTramos.map(String);
+              tramoFeatures = window.tramosGeoJSON.features.filter(f => strTramos.includes(String(f.properties.id || '')));
+            }
+
+            const allFeatures = [...features, ...tramoFeatures];
+
+            if (allFeatures.length > 0) {
+              inZone = allFeatures.some(f => {
                 try {
-                  if (f.geometry.type === 'Polygon') return turf.booleanPointInPolygon(point, f);
-                  if (f.geometry.type === 'LineString') return turf.pointToLineDistance(point, f, { units: 'meters' }) < 80;
+                  if (f.geometry.type === 'Polygon' || f.geometry.type === 'MultiPolygon') return turf.booleanPointInPolygon(point, f);
+                  if (f.geometry.type === 'LineString' || f.geometry.type === 'MultiLineString') return turf.pointToLineDistance(point, f, { units: 'meters' }) < 80;
                 } catch (e) { return false; }
                 return false;
               });
             }
           }
         } catch (e) {}
+
+      // REGLA DE PAUSA: Si hay una pausa activa y aprobada, con tiempo restante, el GPS NUNCA da fuera de zona
+      if (window.currentActivePause && window.currentActivePause.status === 'authorized') {
+         const pStart = new Date(window.currentActivePause.start_time).getTime();
+         const pEnd = pStart + (window.currentActivePause.duration_minutes * 60000);
+         if (new Date().getTime() < pEnd) {
+             inZone = true; // Supress "fuera de ruta"
+         }
+      }
+
       }
       _ctrlZoneBadge(inZone, dotEl, badgeEl);
       _ctrlGpsStatus(`GPS activo · ±${Math.round(accuracy)}m · ${new Date().toLocaleTimeString('es-EC')}`, '#10b981');

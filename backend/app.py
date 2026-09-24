@@ -845,7 +845,8 @@ def create_ticket():
         else:
             data = request.form
             
-        if not all(k in data for k in ('user_id', 'route_id', 'violation_type', 'amount')):
+        if 'amount' not in data: data = dict(data); data['amount'] = 0.0
+        if not all(k in data for k in ('user_id', 'route_id', 'violation_type')):
             return jsonify({'message': 'Datos incompletos'}), 400
             
         photo_path = None
@@ -1194,6 +1195,20 @@ def request_pause():
     db.session.commit()
     
     return jsonify({'message': 'Pausa solicitada', 'pause': pause.to_dict()}), 201
+
+@app.route('/api/pauses/my_active', methods=['GET'])
+@jwt_required()
+def get_my_active_pause():
+    user_id = int(get_jwt_identity())
+    pause = ActivePause.query.filter(
+        ActivePause.user_id == user_id,
+        ActivePause.status.in_(['pending', 'authorized', 'rejected'])
+    ).order_by(ActivePause.id.desc()).first()
+    
+    if not pause:
+        return jsonify(None), 200
+        
+    return jsonify(pause.to_dict()), 200
 
 @app.route('/api/pauses', methods=['GET'])
 @jwt_required()
