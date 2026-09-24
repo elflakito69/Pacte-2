@@ -1702,7 +1702,7 @@ function renderTicketsTable(tickets) {
   const tbody = document.querySelector('#tickets tbody');
   if (!tbody) return;
 
-  const canManageTickets = currentUser && currentUser.role === 'admin';
+  const canManageTickets = currentUser && (currentUser.role === 'admin' || currentUser.role === 'supervisor');
 
   tbody.innerHTML = tickets.map(ticket => `
     <tr>
