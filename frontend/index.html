@@ -615,20 +615,7 @@
           </div>
         </div>
         <!-- MAPA DE LA RUTA -->
-        <div style="position:relative;border-radius:12px;overflow:hidden;box-shadow:var(--shadow-soft);">
-                    <!-- Toggle Layer Control (Controller) -->
-          <div id="ctrl-layer-toggle-container" style="position: absolute; top: 15px; right: 15px; z-index: 1000; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); padding: 8px 12px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; gap: 8px; font-family: monospace; font-size: 13px; font-weight: 600; color: #94a3b8;">
-            <span id="ctrl-label-rutas" style="color: #38bdf8;">RUTAS</span>
-            <label class="switch" style="position: relative; display: inline-block; width: 36px; height: 18px; margin: 0;">
-              <input type="checkbox" id="ctrl-radar-layer-toggle" style="opacity: 0; width: 0; height: 0;">
-              <span class="slider round" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #334155; transition: .3s; border-radius: 18px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);"></span>
-            </label>
-            <span id="ctrl-label-tramos">TRAMOS</span>
-          </div>
-          <style>
-            #ctrl-radar-layer-toggle:checked + .slider { background-color: #0284c7; }
-            #ctrl-radar-layer-toggle:checked + .slider:before { transform: translateX(18px); }
-          </style>
+        <!-- Toggle removed for unified view -->
 <div id="ctrl-route-map" style="height:420px;width:100%;background:#0f172a;"></div>
           <!-- Overlay de "sin ruta" -->
           <div id="ctrl-no-route-overlay" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,40,85,0.92);color:#fff;border-radius:12px;z-index:500;">

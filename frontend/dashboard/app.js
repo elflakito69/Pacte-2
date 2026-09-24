@@ -3041,7 +3041,7 @@ async function loadMyRoute() {
     // ─── INICIALIZAR MAPA ───
     await _initCtrlRouteMap(route, route2, data);
     // ─── ACTIVAR GPS EN TIEMPO REAL ───
-    _startCtrlGpsWatch(route, route2, dotEl, badgeEl);
+    _startCtrlGpsWatch(route, route2, dotEl, badgeEl, data.assigned_tramos);
 
     // CRONÓMETRO EN TIEMPO REAL
     let segundosCirculando = Number(route.minutos_circulando || 0) * 60;
@@ -3181,34 +3181,7 @@ async function _initCtrlRouteMap(route, route2, data) {
     }
 
     
-    // Toggle Logic for Controller
-    const toggleBtn = document.getElementById('ctrl-radar-layer-toggle');
-    const lblRutas = document.getElementById('ctrl-label-rutas');
-    const lblTramos = document.getElementById('ctrl-label-tramos');
-    
-    if (toggleBtn) {
-      if (window.ctrlTramosLayer && ctrlRouteMap.hasLayer(window.ctrlTramosLayer)) {
-         ctrlRouteMap.removeLayer(window.ctrlTramosLayer);
-      }
-      
-      toggleBtn.addEventListener('change', (e) => {
-        if (e.target.checked) {
-          if (window.ctrlRoutesLayer && ctrlRouteMap.hasLayer(window.ctrlRoutesLayer)) {
-            ctrlRouteMap.removeLayer(window.ctrlRoutesLayer);
-          }
-          if (window.ctrlTramosLayer) window.ctrlTramosLayer.addTo(ctrlRouteMap);
-          if (lblRutas) lblRutas.style.color = '#64748b';
-          if (lblTramos) lblTramos.style.color = '#38bdf8';
-        } else {
-          if (window.ctrlTramosLayer && ctrlRouteMap.hasLayer(window.ctrlTramosLayer)) {
-            ctrlRouteMap.removeLayer(window.ctrlTramosLayer);
-          }
-          if (window.ctrlRoutesLayer) window.ctrlRoutesLayer.addTo(ctrlRouteMap);
-          if (lblRutas) lblRutas.style.color = '#38bdf8';
-          if (lblTramos) lblTramos.style.color = '#64748b';
-        }
-      });
-    }
+        // Toggle logic removed. Both layers remain visible.
 
     if (bounds && bounds.isValid()) {
       ctrlRouteMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 17 });
@@ -3218,7 +3191,7 @@ async function _initCtrlRouteMap(route, route2, data) {
   }
 }
 
-function _startCtrlGpsWatch(route, route2, dotEl, badgeEl) {
+function _startCtrlGpsWatch(route, route2, dotEl, badgeEl, assignedTramos = []) {
   if (!navigator.geolocation) {
     _ctrlGpsStatus('GPS no disponible en este dispositivo.', '#dc2626');
     return;
