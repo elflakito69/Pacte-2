@@ -102,8 +102,8 @@ function formatDateTime(isoString) {
 
 function translateStatus(status) {
   const map = {
-    pending: 'Pendiente',
-    paid: 'Pagado',
+    pending: 'En revisión',
+    paid: 'Revisado',
     disputed: 'En disputa',
     active: 'Activo',
     inactive: 'Inactivo',
