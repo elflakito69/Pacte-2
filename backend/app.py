@@ -200,7 +200,7 @@ def login():
 def get_current_user():
     """Obtener usuario actual"""
     user_id = int(get_jwt_identity())
-    user = User.query.get(user_id)
+    user = db.session.get(User, user_id)
     
     if not user:
         return jsonify({'message': 'Usuario no encontrado'}), 404
@@ -210,7 +210,7 @@ def get_current_user():
 # ============= USUARIOS =============
 
 def get_admin_user():
-    current_user = User.query.get(int(get_jwt_identity()))
+    current_user = db.session.get(User, int(get_jwt_identity()))
     if not current_user or current_user.role != 'admin':
         return None
     return current_user
@@ -219,7 +219,7 @@ def get_admin_user():
 @jwt_required()
 def get_users():
     """Obtener todos los usuarios"""
-    current_user = User.query.get(int(get_jwt_identity()))
+    current_user = db.session.get(User, int(get_jwt_identity()))
     if not current_user or current_user.role not in ['admin', 'supervisor']:
         return jsonify({'message': 'Acceso denegado.'}), 403
 
@@ -287,7 +287,7 @@ def get_user(user_id):
     if not get_admin_user():
         return jsonify({'message': 'Acceso denegado. Solo administradores pueden gestionar usuarios.'}), 403
 
-    user = User.query.get(user_id)
+    user = db.session.get(User, user_id)
     
     return jsonify(user.to_dict()), 200
 
@@ -298,7 +298,7 @@ def update_user(user_id):
     if not get_admin_user():
         return jsonify({'message': 'Acceso denegado. Solo administradores pueden gestionar usuarios.'}), 403
 
-    user = User.query.get(user_id)
+    user = db.session.get(User, user_id)
     
     if not user:
         return jsonify({'message': 'Usuario no encontrado'}), 404
@@ -336,12 +336,12 @@ def update_user(user_id):
 @jwt_required()
 def assign_user_route(user_id):
     """Asignar una ruta actual a un controlador"""
-    current_user = User.query.get(int(get_jwt_identity()))
+    current_user = db.session.get(User, int(get_jwt_identity()))
     if not current_user or current_user.role not in ['admin', 'supervisor']:
         return jsonify({'message': 'Acceso denegado. Solo administradores o supervisores pueden gestionar rutas.'}), 403
 
 
-    user = User.query.get(user_id)
+    user = db.session.get(User, user_id)
 
     if not user:
         return jsonify({'message': 'Usuario no encontrado'}), 404
@@ -354,11 +354,11 @@ def assign_user_route(user_id):
     route = None
     route_2 = None
     if route_id not in ('', None):
-        route = Route.query.get(route_id)
+        route = db.session.get(Route, route_id)
         if not route:
             return jsonify({'message': 'Ruta principal no encontrada'}), 404
     if route_id_2 not in ('', None):
-        route_2 = Route.query.get(route_id_2)
+        route_2 = db.session.get(Route, route_id_2)
         if not route_2:
             return jsonify({'message': 'Ruta secundaria no encontrada'}), 404
     if route_id and route_id_2 and int(route_id) == int(route_id_2):
@@ -378,7 +378,7 @@ def assign_user_route(user_id):
             user.assigned_tramos = None
 
     if route_id not in ('', None) or route_id_2 not in ('', None):
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc)
         user.shift_start = now
         user.off_route_seconds = 0
         user.last_ping_time = now
@@ -395,17 +395,17 @@ def assign_user_route(user_id):
 @jwt_required()
 def get_my_route():
     current_user_id = get_jwt_identity()
-    user = User.query.get(current_user_id)
+    user = db.session.get(User, current_user_id)
     if not user or (not user.current_route_id and not user.current_route_id_2):
         return jsonify({'message': 'Sin ruta asignada', 'code': 'NO_ROUTE'}), 404
 
-    route = Route.query.get(user.current_route_id) if user.current_route_id else None
-    route_2 = Route.query.get(user.current_route_id_2) if user.current_route_id_2 else None
+    route = db.session.get(Route, user.current_route_id) if user.current_route_id else None
+    route_2 = db.session.get(Route, user.current_route_id_2) if user.current_route_id_2 else None
     
     if not route and not route_2:
         return jsonify({'message': 'La ruta asignada ya no existe. Solicita reasignación.', 'code': 'ROUTE_DELETED'}), 404
 
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     circulating_seconds = 0
     if user.shift_start:
         circulating_seconds = max(0, int((now - user.shift_start).total_seconds()))
@@ -445,7 +445,7 @@ def delete_user(user_id):
     if not get_admin_user():
         return jsonify({'message': 'Acceso denegado. Solo administradores pueden gestionar usuarios.'}), 403
 
-    user = User.query.get(user_id)
+    user = db.session.get(User, user_id)
     
     if not user:
         return jsonify({'message': 'Usuario no encontrado'}), 404
@@ -459,7 +459,7 @@ def delete_user(user_id):
 
 def _get_real_off_route_seconds(user):
     from datetime import datetime
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     total = user.off_route_seconds or 0
     if user.last_ping_status == 'off_zone' and user.last_ping_time:
         pending = max(0, int((now - user.last_ping_time).total_seconds()))
@@ -489,7 +489,7 @@ def get_routes():
     paginated = query.paginate(page=page, per_page=per_page)
     
     routes = []
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc)
     for route in paginated.items:
         route_data = route.to_dict()
         assigned_user = User.query.filter(
@@ -585,11 +585,11 @@ def create_route():
 @jwt_required()
 def update_route(route_id):
     """Actualizar ruta"""
-    current_user = User.query.get(int(get_jwt_identity()))
+    current_user = db.session.get(User, int(get_jwt_identity()))
     if not current_user or current_user.role not in ['admin', 'supervisor']:
         return jsonify({'message': 'Acceso denegado. Solo administradores o supervisores pueden editar rutas.'}), 403
 
-    route = Route.query.get(route_id)
+    route = db.session.get(Route, route_id)
     
     if not route:
         return jsonify({'message': 'Ruta no encontrada'}), 404
@@ -620,7 +620,7 @@ def delete_route(route_id):
     """Eliminar ruta"""
     if not get_admin_user():
         return jsonify({'message': 'Acceso denegado. Solo administradores pueden gestionar rutas.'}), 403
-    route = Route.query.get(route_id)
+    route = db.session.get(Route, route_id)
     
     if not route:
         return jsonify({'message': 'Ruta no encontrada'}), 404
@@ -652,7 +652,7 @@ def handle_controller_location(data):
         db.session.add(monitoring)
         db.session.commit()
 
-        user = User.query.get(user_id)
+        user = db.session.get(User, user_id)
         emit('live_update', {
             'user_id': user_id,
             'user_name': user.full_name if user else f'Controller {user_id}',
@@ -660,7 +660,7 @@ def handle_controller_location(data):
             'latitude': latitude,
             'longitude': longitude,
             'status': data.get('status', 'active'),
-            'timestamp': datetime.utcnow().isoformat()
+            'timestamp': datetime.now(timezone.utc).isoformat()
         })
     except Exception as e:
         logger.exception(f"Error WebSocket: {str(e)}")
@@ -682,7 +682,7 @@ def get_live_positions():
 
     result = []
     for m in latest:
-        user = User.query.get(m.user_id)
+        user = db.session.get(User, m.user_id)
         if user and user.role == 'user' and user.is_active:
             result.append({
                 'user_id': m.user_id,
@@ -742,11 +742,11 @@ def create_monitoring():
         if not all(k in data for k in ('user_id', 'route_id', 'latitude', 'longitude')):
             return jsonify({'message': 'Datos incompletos'}), 400
 
-        user = User.query.get(data['user_id'])
+        user = db.session.get(User, data['user_id'])
         if not user:
             return jsonify({'message': 'Usuario no encontrado'}), 404
 
-        now = datetime.utcnow()
+        now = datetime.now(timezone.utc)
         if user.last_ping_time and user.last_ping_status == 'off_zone':
             elapsed_seconds = max(0, int((now - user.last_ping_time).total_seconds()))
             user.off_route_seconds = (user.off_route_seconds or 0) + elapsed_seconds
@@ -781,7 +781,7 @@ def create_monitoring():
             'latitude': data['latitude'],
             'longitude': data['longitude'],
             'status': data.get('status', 'active'),
-            'timestamp': datetime.utcnow().isoformat()
+            'timestamp': datetime.now(timezone.utc).isoformat()
         })
         
         return jsonify({
@@ -846,6 +846,7 @@ def create_ticket():
             data = request.form
             
         if 'amount' not in data: data = dict(data); data['amount'] = 0.0
+        print('TICKET PAYLOAD:', data)
         if not all(k in data for k in ('user_id', 'route_id', 'violation_type')):
             return jsonify({'message': 'Datos incompletos'}), 400
             
@@ -909,7 +910,7 @@ def get_ticket_photo(ticket_id):
     except Exception:
         return jsonify({'message': 'Token inválido'}), 401
 
-    ticket = Ticket.query.get(ticket_id)
+    ticket = db.session.get(Ticket, ticket_id)
 
     if not ticket or not ticket.photo_path:
         return jsonify({'message': 'Foto no encontrada'}), 404
@@ -926,11 +927,11 @@ def get_ticket_photo(ticket_id):
 @jwt_required()
 def update_ticket(ticket_id):
     """Actualizar multa"""
-    current_user = User.query.get(int(get_jwt_identity()))
+    current_user = db.session.get(User, int(get_jwt_identity()))
     if not current_user or current_user.role != 'admin':
         return jsonify({'message': 'Acceso denegado. Solo administradores pueden borrar multas'}), 403
 
-    ticket = Ticket.query.get(ticket_id)
+    ticket = db.session.get(Ticket, ticket_id)
     
     if not ticket:
         return jsonify({'message': 'Multa no encontrada'}), 404
@@ -950,11 +951,11 @@ def update_ticket(ticket_id):
 @app.route('/api/tickets/<int:ticket_id>', methods=['DELETE'])
 @jwt_required()
 def delete_ticket(ticket_id):
-    current_user = User.query.get(int(get_jwt_identity()))
+    current_user = db.session.get(User, int(get_jwt_identity()))
     if not current_user or current_user.role != 'admin':
         return jsonify({'message': 'Acceso denegado. Solo administradores pueden borrar multas'}), 403
 
-    ticket = Ticket.query.get(ticket_id)
+    ticket = db.session.get(Ticket, ticket_id)
     if not ticket:
         return jsonify({'message': 'Multa no encontrada'}), 404
 
@@ -984,7 +985,7 @@ def download_single_ticket_pdf(ticket_id):
         except:
             return jsonify({'message': 'Token invalido'}), 401
             
-    ticket = Ticket.query.get(ticket_id)
+    ticket = db.session.get(Ticket, ticket_id)
     if not ticket:
         return jsonify({'message': 'Multa no encontrada'}), 404
         
@@ -1219,7 +1220,7 @@ def get_pauses():
 @app.route('/api/pauses/<int:pause_id>/status', methods=['PUT'])
 @jwt_required()
 def update_pause_status(pause_id):
-    pause = ActivePause.query.get(pause_id)
+    pause = db.session.get(ActivePause, pause_id)
     if not pause:
         return jsonify({'message': 'No encontrado'}), 404
     
@@ -1257,7 +1258,7 @@ def get_alerts():
 @app.route('/api/alerts/<int:alert_id>/read', methods=['PUT'])
 @jwt_required()
 def mark_alert_read(alert_id):
-    alert = Alert.query.get(alert_id)
+    alert = db.session.get(Alert, alert_id)
     if alert:
         alert.status = 'read'
         db.session.commit()
@@ -1411,7 +1412,7 @@ def get_my_alerts():
 @app.route('/api/alerts/<int:alert_id>', methods=['DELETE'])
 @jwt_required()
 def delete_alert(alert_id):
-    alert = Alert.query.get(alert_id)
+    alert = db.session.get(Alert, alert_id)
     if not alert:
         return jsonify({'message': 'Alerta no encontrada'}), 404
 

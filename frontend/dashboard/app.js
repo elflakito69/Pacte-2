@@ -2856,15 +2856,16 @@ async function handleMobileTicketSubmit(event) {
 
   formData.append('user_id', currentUser.id);
 
-  // FIX: los <select disabled> NO se incluyen en FormData — forzamos el route_id
   const routeSelect = document.getElementById('mobile-route-select');
   if (routeSelect && routeSelect.value) {
     formData.set('route_id', routeSelect.value);
   } else if (currentUser.current_route_id) {
     formData.set('route_id', currentUser.current_route_id);
+  } else {
+    showToast('Error: No tienes una Ruta asignada. Pide a tu supervisor que te asigne una.', 'error');
+    return;
   }
 
-  // Adjuntar GPS si está disponible
   if (window._mobileTicketGPS) {
     formData.set('latitude', window._mobileTicketGPS.lat);
     formData.set('longitude', window._mobileTicketGPS.lng);
