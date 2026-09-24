@@ -1298,11 +1298,10 @@ def get_tickets_by_zone():
         db.session.query(
             Route.id.label('route_id'),
             Route.name.label('route_name'),
-            Ticket.address.label('tramo'),
             func.count(Ticket.id).label('count')
         )
         .join(Ticket, Ticket.route_id == Route.id)
-        .group_by(Route.id, Route.name, Ticket.address)
+        .group_by(Route.id, Route.name)
         .order_by(func.count(Ticket.id).desc(), Route.name.asc())
         .all()
     )
@@ -1312,12 +1311,102 @@ def get_tickets_by_zone():
             {
                 'route_id': row.route_id,
                 'route_name': row.route_name,
-                'tramo': row.tramo if row.tramo else 'Sin tramo',
                 'count': int(row.count)
             }
             for row in rows
         ]
     }), 200
+
+@app.route('/api/dashboard/recent-activity', methods=['GET'])
+@jwt_required()
+def get_recent_activity():
+    activities = []
+
+    recent_tickets = Ticket.query.order_by(Ticket.timestamp.desc()).limit(5).all()
+    for ticket in recent_tickets:
+        activities.append({
+            'timestamp': ticket.timestamp.isoformat() if ticket.timestamp else None,
+            'type': 'ticket',
+            'description': f"Multa registrada: {ticket.violation_type}",
+            'user_name': ticket.user.full_name if ticket.user else 'Sistema'
+        })
+
+    recent_pauses = ActivePause.query.order_by(ActivePause.start_time.desc()).limit(5).all()
+    for pause in recent_pauses:
+        activities.append({
+            'timestamp': pause.start_time.isoformat() if pause.start_time else None,
+            'type': 'pause',
+            'description': f"Pausa {pause.status}: {pause.reason or 'Sin motivo'}",
+            'user_name': pause.user.full_name if pause.user else 'Sistema'
+        })
+
+    recent_alerts = Alert.query.order_by(Alert.timestamp.desc()).limit(10).all()
+    for alert in recent_alerts:
+        if alert.type == 'login_info':
+            activities.append({
+                'timestamp': alert.timestamp.isoformat() if alert.timestamp else None,
+                'type': 'login',
+                'description': alert.message or 'Inicio de sesión del controlador',
+                'user_name': alert.user.full_name if alert.user else 'Sistema',
+                'has_coords': alert.latitude is not None and alert.longitude is not None,
+                'latitude': alert.latitude,
+                'longitude': alert.longitude
+            })
+        else:
+            activities.append({
+                'timestamp': alert.timestamp.isoformat() if alert.timestamp else None,
+                'type': 'alert',
+                'description': alert.message or f"Alerta: {alert.type}",
+                'user_name': alert.user.full_name if alert.user else 'Sistema'
+            })
+
+    def _get_ts(item):
+        ts = item['timestamp']
+        return ts or ''
+
+    activities.sort(key=_get_ts, reverse=True)
+    top_five = activities[:5]
+
+    return jsonify({
+        'items': [
+            {
+                'type': item['type'],
+                'description': item['description'],
+                'user_name': item['user_name'],
+                'time_ago': format_time_ago(item['timestamp']),
+                'has_coords': item.get('has_coords', False),
+                'latitude': item.get('latitude'),
+                'longitude': item.get('longitude')
+            }
+            for item in top_five
+        ]
+    }), 200
+
+
+@app.route('/api/alerts/my', methods=['GET'])
+@jwt_required()
+def get_my_alerts():
+    user_id = int(get_jwt_identity())
+    alerts = Alert.query.filter_by(user_id=user_id, type='fuera_de_ruta', status='unread').order_by(Alert.timestamp.desc()).all()
+    return jsonify([a.to_dict() for a in alerts]), 200
+
+
+@app.route('/api/alerts/<int:alert_id>', methods=['DELETE'])
+@jwt_required()
+def delete_alert(alert_id):
+    alert = Alert.query.get(alert_id)
+    if not alert:
+        return jsonify({'message': 'Alerta no encontrada'}), 404
+
+    user_id = alert.user_id
+    db.session.delete(alert)
+
+    latest_monitoring = Monitoring.query.filter_by(user_id=user_id).order_by(Monitoring.timestamp.desc()).first()
+    if latest_monitoring:
+        latest_monitoring.status = 'active'
+
+    db.session.commit()
+    return jsonify({'message': 'Alerta eliminada'}), 200
 
 
 @app.route('/api/alerts/mark-all-read', methods=['POST'])
