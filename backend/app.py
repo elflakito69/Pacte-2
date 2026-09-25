@@ -378,7 +378,7 @@ def assign_user_route(user_id):
             user.assigned_tramos = None
 
     if route_id not in ('', None) or route_id_2 not in ('', None):
-        now = datetime.now(timezone.utc)
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
         user.shift_start = now
         user.off_route_seconds = 0
         user.last_ping_time = now
@@ -405,7 +405,7 @@ def get_my_route():
     if not route and not route_2:
         return jsonify({'message': 'La ruta asignada ya no existe. Solicita reasignación.', 'code': 'ROUTE_DELETED'}), 404
 
-    now = datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     circulating_seconds = 0
     if user.shift_start:
         circulating_seconds = max(0, int((now - user.shift_start).total_seconds()))
@@ -459,7 +459,7 @@ def delete_user(user_id):
 
 def _get_real_off_route_seconds(user):
     from datetime import datetime
-    now = datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     total = user.off_route_seconds or 0
     if user.last_ping_status == 'off_zone' and user.last_ping_time:
         pending = max(0, int((now - user.last_ping_time).total_seconds()))
@@ -489,7 +489,7 @@ def get_routes():
     paginated = query.paginate(page=page, per_page=per_page)
     
     routes = []
-    now = datetime.now(timezone.utc)
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     for route in paginated.items:
         route_data = route.to_dict()
         assigned_user = User.query.filter(
@@ -660,7 +660,7 @@ def handle_controller_location(data):
             'latitude': latitude,
             'longitude': longitude,
             'status': data.get('status', 'active'),
-            'timestamp': datetime.now(timezone.utc).isoformat()
+            'timestamp': datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
         })
     except Exception as e:
         logger.exception(f"Error WebSocket: {str(e)}")
@@ -746,7 +746,7 @@ def create_monitoring():
         if not user:
             return jsonify({'message': 'Usuario no encontrado'}), 404
 
-        now = datetime.now(timezone.utc)
+        now = datetime.now(timezone.utc).replace(tzinfo=None)
         if user.last_ping_time and user.last_ping_status == 'off_zone':
             elapsed_seconds = max(0, int((now - user.last_ping_time).total_seconds()))
             user.off_route_seconds = (user.off_route_seconds or 0) + elapsed_seconds
@@ -781,7 +781,7 @@ def create_monitoring():
             'latitude': data['latitude'],
             'longitude': data['longitude'],
             'status': data.get('status', 'active'),
-            'timestamp': datetime.now(timezone.utc).isoformat()
+            'timestamp': datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
         })
         
         return jsonify({
